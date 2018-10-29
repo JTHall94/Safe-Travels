@@ -6,10 +6,10 @@
           <i class="fas fa-bars"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Home</a>
-          <a class="dropdown-item" href="#">Alerts</a>
-          <a class="dropdown-item" href="#">Contacts</a>
-          <a class="dropdown-item" href="#">Account</a>
+          <a class="dropdown-item" href="/home">Home</a>
+          <a class="dropdown-item" href="/alerts">Alerts</a>
+          <a class="dropdown-item" href="/contacts">Contacts</a>
+          <a class="dropdown-item" href="/account">Account</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Logout</a>
         </div>

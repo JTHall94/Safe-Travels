@@ -21,10 +21,14 @@ Route::get('/home', function () {
 });
 
 
-Route::get('/header', function () {
-    return view('header');
+Route::get('/contacts', function () {
+    return view('contacts');
 });
 
 Route::get('/account', function () {
     return view('account');
+});
+
+Route::get('/alerts', function () {
+    return view('alerts');
 });
