@@ -1,7 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
 // Variables
 @import 'variables';
 
@@ -12,3 +11,86 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+    html, body {
+        background-color: #1F7843;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 200;
+        height: 100%;
+        margin: 0;
+    }
+
+
+    #logintitle{
+      text-align: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: 40%;
+      transform: translateY(-40%);
+      margin-bottom: 2em;
+    }
+
+    #loginfields {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      position: relative;
+      top: 40%;
+      transform: translateY(-40%);
+    }
+
+    #loginheading {
+      font-family: 'Acme', serif;
+      font-size: 65px;
+
+    }
+
+
+
+
+
+
+  /*  .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: block;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 84px;
+    }
+
+    .links > a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+} */
