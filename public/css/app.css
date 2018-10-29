@@ -10474,8 +10474,8 @@ a.text-dark:focus {
 
 html,
 body {
-  background-color: #1F7843;
-  color: white;
+  background-color: #fff;
+  color: #1F7843;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   height: 100%;
@@ -10483,6 +10483,35 @@ body {
   /*background-image: url(http://kingdomcolor.info/wp-content/uploads/2018/05/very-high-resolution-world-map-political-image-definition-picture.jpg);
         background-repeat: no-repeat;
         background-size: 100% 100%; */
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.navbar-header {
+  float: left;
+  padding: 0;
+  text-align: center;
+  width: 50%;
+}
+
+.navbar-brand {
+  float: none;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #38c172;
+}
+
+.navbar-brand:hover {
+  color: #38c172;
+}
+
+nav {
+  background-color: #1F7843;
+  color: #fff;
 }
 
 #loginblock {
@@ -10493,6 +10522,7 @@ body {
   margin: auto;
   margin-bottom: 2em;
   background-color: #1F7843;
+  border: 1px solid white;
   max-width: 75%;
 }
 
@@ -10507,6 +10537,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #fff;
   /*position: relative;
       top: 40%;
       transform: translateY(-40%);
@@ -10523,6 +10554,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #fff;
   /*  position: relative;
       top: 40%;
       transform: translateY(-40%); */
@@ -10538,45 +10570,21 @@ body {
   color: black;
 }
 
-/*  .full-height {
-        height: 100vh;
-    }
+.usercontent {
+  min-width: 100%;
+  height: 400px;
+  background-color: #D3D3D3;
+}
 
-    .flex-center {
-        align-items: center;
-        display: block;
-        justify-content: center;
-    }
+.alertcontent {
+  min-width: 100%;
+  height: 400px;
+  background-color: #D3D3D3;
+}
 
-    .position-ref {
-        position: relative;
-    }
-
-    .top-right {
-        position: absolute;
-        right: 10px;
-        top: 18px;
-    }
-
-    .content {
-        text-align: center;
-    }
-
-    .title {
-        font-size: 84px;
-    }
-
-    .links > a {
-        color: #636b6f;
-        padding: 0 25px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-    .m-b-md {
-        margin-bottom: 30px;
-} */
+.favcontactscontent {
+  min-width: 100%;
+  height: 400px;
+  background-color: #D3D3D3;
+}
 
