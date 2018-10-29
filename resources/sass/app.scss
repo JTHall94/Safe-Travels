@@ -19,33 +19,56 @@
         font-weight: 200;
         height: 100%;
         margin: 0;
+        /*background-image: url(http://kingdomcolor.info/wp-content/uploads/2018/05/very-high-resolution-world-map-political-image-definition-picture.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%; */
+
     }
 
+
+
+
+    #loginblock {
+      position: relative;
+      top: 40%;
+      transform: translateY(-40%);
+      margin: auto;
+      margin-bottom: 2em;
+      background-color: #1F7843;
+      // border: 1px solid white;
+      max-width: 75%;
+
+    }
 
     #logintitle{
       text-align: center;
       align-items: center;
       display: flex;
       justify-content: center;
-      position: relative;
+      /*position: relative;
       top: 40%;
       transform: translateY(-40%);
-      margin-bottom: 2em;
+      margin-bottom: 2em;*/
     }
 
     #loginfields {
       align-items: center;
       justify-content: center;
       display: flex;
-      position: relative;
+    /*  position: relative;
       top: 40%;
-      transform: translateY(-40%);
+      transform: translateY(-40%); */
     }
 
     #loginheading {
       font-family: 'Acme', serif;
       font-size: 65px;
 
+    }
+
+    #pagecontent {
+      background-color: #fff;
+      color: black;
     }
 
 

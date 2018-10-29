@@ -13,7 +13,7 @@
 
   <body class="container">
 
-
+    <div id="loginblock">
       <div id="logintitle">
         <div class="row">
           <h1 class="mt-3 mb-5" id="loginheading">Safe Travels</h1>
@@ -34,10 +34,11 @@
               <div class="form-check p-0">
                 <p>Don't have an account? <a href="/signup">Sign</a> up here!</p>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary mb-5">Submit</button>
             </form>
         </div>
       </div>
+    </div>
 
 
 
