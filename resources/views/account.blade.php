@@ -1,8 +1,8 @@
-@include('head')
+@include('includes/head')
 
 <body>
 
-  @include('header')
+  @include('includes/header')
 
   <div class="container" id="pagecontent">
 
@@ -22,4 +22,4 @@
 
 
 
-  @include('footer')
+  @include('includes/footer')
