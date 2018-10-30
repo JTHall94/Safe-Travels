@@ -10480,9 +10480,9 @@ body {
   font-weight: 200;
   height: 100%;
   margin: 0;
-  background-image: url(http://galloforoakland.com/wp-content/uploads/2018/08/world-map-wallpapers-high-resolution-wallpaper-cave-world-map-high-resolution.jpeg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  /*background-image: url(http://galloforoakland.com/wp-content/uploads/2018/08/world-map-wallpapers-high-resolution-wallpaper-cave-world-map-high-resolution.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;*/
 }
 
 .nav-link {
@@ -10493,7 +10493,7 @@ body {
   float: left;
   padding: 0;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 .navbar-brand {
