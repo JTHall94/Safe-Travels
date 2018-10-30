@@ -6,6 +6,7 @@
 
   <div class="container" id="pagecontent">
 
+<!-- NOTE: MARGINS -->
     <div class="alertcontent mt-5 mb-5">
       <h1 class="homeheadings">Create Alert</h1>
       <form>
