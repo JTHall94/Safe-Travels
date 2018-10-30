@@ -9,39 +9,89 @@
     <div class="alertcontent mt-5 mb-5">
       <h1 class="homeheadings">Create Alert</h1>
       <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div class="row">
+          <div class="col-sm">
+              <div class="form-group">
+                <label for="alertname">Name</label>
+                <input type="name" class="form-control" id="alertname" aria-describedby="alertn" placeholder="Enter Name for Alert">
+              </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <div class="col-sm">
+              <div class="form-group">
+                <label for="StartTime">Start Time</label>
+                <select class="form-control" id="StartTime">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
           </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          <div class="col-sm">
+              <div class="form-group">
+                <label for="Alarm Time">Alarm Time</label>
+                <select class="form-control" id="AlarmTime">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-
-
-
-
-      <!-- p>This field will only become visible when the add alert ('+') button is clicked</p>
-      <p>It will consist mainly of a form, with all of the required fields for building and alert,<p>
-      <p>as well as the functionality required to drop a geographic pin (special functionality) </p>
-      <p>When the add button is hit at the bottom of the form, this field will disappear and the list will be updated</p -->
-
-
+          <div class="col-sm">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Low</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Medium</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">High</label>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <div class="form-group">
+              <label for="alertDescription">Description</label>
+              <textarea class="form-control" id="alertDescription" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <p>This is where the google maps functionality will be integrated</p>
+      </div>
+    </div>
+</div>
 
     <div class="usercontent mt-5 mb-5">
       <h1 class="homeheadings">Alerts</h1>
-      <p>This will consist of a list of active alerts that can be expanded into cards (much like on the home page) </p>
-      <p>Maybe consider creating a list of the expanded cards (for easier, more detailed viewing specific to this page) </p>
-      <p>Each alert should have an option to delete (are you sure popup included), (possibly)expand, and edit. </p>
-    </div>
+      <div class="row">
+        <div class="col">
+          <div class="card mt-2 mb-5 mr-5 ml-5">
+              <div class="card-body">
+                <h5 class="card-title">Full Name</h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name</li>
+                <li class="list-group-item">Start Time</li>
+                <li class="list-group-item">Alarm Time</li>
+                <li class="list-group-item">Priority</li>
+                <li class="list-group-item">Description</li>
+                <li class="list-group-item">Maps</li>
+
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">More...</a>
+                <a href="#" class="card-link">Edit</a>
+              </div>
+          </div>
+        </div>
 
 
 
