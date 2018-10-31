@@ -5,7 +5,7 @@
   @section('CreateAlert')
           <div class="alertcontent mt-5 mb-5">
             <h1 class="homeheadings">Create Alert</h1>
-            <form>
+            <form class="ml-5 mr-5">
               <div class="row">
                 <div class="col-sm">
                     <div class="form-group">
@@ -61,9 +61,10 @@
           </div>
           <div class="row">
             <div class="col">
-              <p>This is where the google maps functionality will be integrated</p>
+              <p class="ml-5 mr-5">This is where the google maps functionality will be integrated</p>
             </div>
           </div>
+        </form>
         </div>
   @stop
 

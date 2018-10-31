@@ -10474,7 +10474,7 @@ a.text-dark:focus {
 
 html,
 body {
-  background-color: #fff;
+  background-color: #808080;
   color: #1F7843;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
@@ -10499,15 +10499,14 @@ body {
 .navbar-nav {
   max-width: 30px;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  float: none;
+  display: inline-block;
+  float: left;
 }
 
 .navbar-brand {
   float: none;
   color: #fff;
+  display: inline-block;
 }
 
 .nav-link:hover {
@@ -10577,6 +10576,7 @@ nav {
 #pagecontent {
   background-color: #fff;
   color: black;
+  padding: 0;
 }
 
 .usercontent {
@@ -10589,6 +10589,7 @@ nav {
   min-width: 100%;
   height: auto;
   background-color: #CACACC;
+  overflow: hidden;
 }
 
 .favcontactscontent {

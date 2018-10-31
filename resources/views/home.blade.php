@@ -49,63 +49,67 @@
   @section('UserAlerts')
       <div class="alertcontent">
         <h1 class="homeheadings">Alerts</h1>
-        <table class="table">
-            <thead class="mt-2">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Date</th>
-                <th scope="col">Alarm Time</th>
-                <th scope="col">Priority</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Hiking Trip</td>
-                <td>10-30-2018</td>
-                <td>5:00PM</td>
-                <td>Medium</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Walking Home from Library</td>
-                <td>10-31-2018</td>
-                <td>9:00PM</td>
-                <td>High</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Kayaking</td>
-                <td>10-05-2018</td>
-                <td>2:00PM</td>
-                <td>Medium</td>
-              </tr>
-            </tbody>
-            </table>
+        <div class="ml-5 mr-5">
+            <table class="table">
+                <thead class="mt-2 ml-5 mr-5">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Alarm Time</th>
+                    <th scope="col">Priority</th>
+                  </tr>
+                </thead>
+                <tbody class="ml-5 mr-5">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Hiking Trip</td>
+                    <td>10-30-2018</td>
+                    <td>5:00PM</td>
+                    <td>Medium</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Walking Home from Library</td>
+                    <td>10-31-2018</td>
+                    <td>9:00PM</td>
+                    <td>High</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Kayaking</td>
+                    <td>10-05-2018</td>
+                    <td>2:00PM</td>
+                    <td>Medium</td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
       </div>
   @stop
 
   @section('UserFavs')
       <div class="favcontactscontent mt-5 mb-5">
         <h1 class="homeheadings">Favorite Contacts</h1>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="ml-5 mr-5">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
       </div>
   @stop
