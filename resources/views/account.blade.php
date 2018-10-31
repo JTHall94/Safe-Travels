@@ -38,15 +38,6 @@
         </div>
       </div>
     </div>
-  </div>
+
 
 @stop
-
-
-
-
-
-
-
-
-  @include('includes/footer')

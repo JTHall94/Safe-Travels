@@ -10474,7 +10474,7 @@ a.text-dark:focus {
 
 html,
 body {
-  background-color: #808080;
+  background-color: #fff;
   color: #1F7843;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
@@ -10583,19 +10583,21 @@ nav {
   min-width: 100%;
   height: auto;
   background-color: #CACACC;
+  border: 2px solid #1F7843;
 }
 
 .alertcontent {
   min-width: 100%;
   height: auto;
   background-color: #CACACC;
-  overflow: hidden;
+  border: 2px solid #1F7843;
 }
 
 .favcontactscontent {
   min-width: 100%;
   height: auto;
   background-color: #CACACC;
+  border: 2px solid #1F7843;
 }
 
 .homeheadings {

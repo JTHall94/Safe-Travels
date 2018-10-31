@@ -2,7 +2,7 @@
   <div class="navbar-header">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link ml-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bars"></i>
           </a>
           <!--div class="collapse navbar-collapse" id="navbarSupportedContent"-->
