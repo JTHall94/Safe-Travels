@@ -1,11 +1,6 @@
-@include('includes/head')
+@extends('templates.maintemplate')
 
-<body>
-
-  @include('includes/header')
-
-  <div class="container" id="pagecontent">
-
+  @section('AccountInfo')
     <div class="usercontent mt-5 mb-5">
       <h1 class="homeheadings">Account Info</h1>
       <div class="row ml-3 mr-3">
@@ -43,9 +38,9 @@
         </div>
       </div>
     </div>
+  </div>
 
-
-    </div>
+@stop
 
 
 

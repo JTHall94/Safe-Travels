@@ -1,14 +1,9 @@
-@include('includes/head')
-
-  <body>
-
-    @include('includes/header')
-
-    <div class="container" id="pagecontent">
+@extends('templates.maintemplate')
 
       <!-- NOTE: Edit button should link to account page, which will be an editable form. When clicking that link, the form will be ready to edit.
           If you navigate normally to the account page, the form will be readonly, but clicking edit on that page will switch it into editable mode
           as well. -->
+  @section('UserHome')
       <div class="usercontent mt-5 mb-5">
         <h1 class="homeheadings">User Info</h1>
           <div class="row ml-3 mr-3">
@@ -47,9 +42,11 @@
             </div>
           </div>
         </div>
+  @stop
 
 
       <!-- NOTE: Table margins are acting up -->
+  @section('UserAlerts')
       <div class="alertcontent">
         <h1 class="homeheadings">Alerts</h1>
         <table class="table">
@@ -87,8 +84,9 @@
             </tbody>
             </table>
       </div>
+  @stop
 
-
+  @section('UserFavs')
       <div class="favcontactscontent mt-5 mb-5">
         <h1 class="homeheadings">Favorite Contacts</h1>
         <table class="table">
@@ -110,10 +108,4 @@
             </tbody>
           </table>
       </div>
-
-
-
-
-
-
-@include('includes/footer')
+  @stop

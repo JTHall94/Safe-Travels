@@ -11,3 +11,4 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <title>Safe Travels Home</title>
   </head>
+  <body>

@@ -1,11 +1,6 @@
-@include('includes/head')
+@extends('templates.maintemplate')
 
-<body>
-
-  @include('includes/header')
-
-  <div class="container" id="pagecontent">
-
+  @section('CreateContact')
     <div class="usercontent mt-5 mb-5">
       <h1 class="homeheadings">Create a Contact</h1>
       <form class="ml-5 mr-5 mb-5">
@@ -28,8 +23,9 @@
           <button type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
     </div>
+  @stop
 
-
+  @section('ContactList')
     <div class="usercontent mt-5 mb-5">
       <h1 class="homeheadings">Contacts Table</h1>
       <table class="table">
@@ -51,12 +47,4 @@
           </tbody>
         </table>
     </div>
-
-
-
-
-
-
-
-
-  @include('includes/footer')
+  @stop
