@@ -8,7 +8,7 @@
 
     <div class="usercontent mt-5 mb-5">
       <h1 class="homeheadings">Create a Contact</h1>
-      <form>
+      <form class="ml-5 mr-5 mb-5">
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
@@ -25,7 +25,7 @@
             <label for="exampleInputPassword1">Relation</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Relationship">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
     </div>
 

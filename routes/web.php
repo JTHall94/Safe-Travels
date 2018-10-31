@@ -32,3 +32,7 @@ Route::get('/account', function () {
 Route::get('/alerts', function () {
     return view('alerts');
 });
+
+Route::get('/signup', function () {
+    return view('signup');
+});
