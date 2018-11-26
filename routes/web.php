@@ -12,31 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('login');
-});
-
-
-Route::get('/home', function () {
-    return view('home');
-});
-
-
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-
-Route::get('/account', function () {
-    return view('account');
-});
-
-Route::get('/alerts', function () {
-    return view('alerts');
-});
-
-Route::get('/signup', function () {
-    return view('signup');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profile', 'ProfileController@edit')->middleware('auth');
+
+Route::put('/profile', 'ProfileController@update')->middleware('auth');
+
+Route::resource('/alerts', 'AlertsController')->middleware('auth');
+
+Route::resource('/contacts', 'ContactsController')->middleware('auth');
