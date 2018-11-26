@@ -131,5 +131,5 @@ class AlertsController extends Controller
       // redirect
       return redirect()->route('alerts.index');
     }
-    }
+
 }
