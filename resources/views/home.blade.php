@@ -7,7 +7,7 @@
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
                     @include('includes.errorflash')
-
+                    
                     You are logged in!
                 </div>
             </div>

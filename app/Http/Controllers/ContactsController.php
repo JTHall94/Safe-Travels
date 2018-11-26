@@ -102,7 +102,7 @@ class ContactsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $referer = request()->headers->get('referer');
         $force_delete = false;
