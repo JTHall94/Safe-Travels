@@ -20,5 +20,21 @@ class ContactsTableSeeder extends Seeder
           $temp->email = 'gahbriellah.rohse@gmail.com';
           $temp->phone= '8595951448';
           $temp->save();
+
+          $temp2 = new \App\Contacts;
+          $temp2->user_id = $jacob->id;
+          $temp2->name = 'James';
+          $temp2->email = 'james@james.com';
+          $temp2->phone= '8593966898';
+          $temp2->save();
+
+          $temp3 = new \App\Contacts;
+          $temp3->user_id = $jacob->id;
+          $temp3->name = 'Kevin';
+          $temp3->email = 'kevin@nlcd.com';
+          $temp3->phone= '2';
+          $temp3->save();
+
+
     }
 }

@@ -5,9 +5,34 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header text-center">Contact List</div>
+        <div class="card-header text-center">Contact List <span class="float-right"><p><a data-toggle="collapse" href="#addForm">New Alert</a></p></span></div>
         <div class="card-body">
           <p>This is where a list of your alerts will be displayed.</p>
+          <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="alert_name" class="font-weight-bold">Name:</label>
+                <input type="text" class="form-control" id="alert_name" name="alert_name" placeholder="Name..." value="{{ old('alert_name') }}">
+
+                <label for="alert_intime" class="mt-2">Time In:</label>
+                <input class="form-control mb-2" type="text" id="alert_intime" name="alert_intime" value="{{old('new_alert_intime')}}" placeholder="Time In...">
+
+                <label for="new_alert_timeout" class="mt-2">Time Out:</label>
+                <input class="form-control mb-2" type="text" id="alert_timeout" name="alert_timeout" value="{{old('new_alert_timeout')}}" placeholder="Time Out...">
+
+                <label for="new_alert_priority" class="mt-2">Priority:</label>
+                <input class="form-control mb-2" type="text" id="alert_priority" name="alert_priority" value="{{old('new_alert_priority')}}" placeholder="Priority...">
+
+                <label for="new_alert_description" class="mt-2">Description:</label>
+                <textarea class="form-control mb-2" id="alert_description" name="alert_description" placeholder="Description...">{{old('new_alert_description')}}</textarea>
+
+                <label for="new_alert_location" class="mt-2">Location:</label>
+                <input class="form-control mb-2" type="text" id="alert_location" name="alert_location" value="{{old('alert_location')}}" placeholder="Location...">
+
+            <button type="submit" class="btn btn-warning">Add</button>
+          </div>
+
+          </form>
         </div>
       </div>
 
