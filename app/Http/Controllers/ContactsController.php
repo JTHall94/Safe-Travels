@@ -43,6 +43,7 @@ class ContactsController extends Controller
         $c->lastname = $request->input('contact_lastname');
         $c->email = $request->input('contact_email');
         $c->phone = $request->input('contact_phone');
+        $c->favorite = $request->input('favoritebtn');
         $c->save();
 
         // messaging
@@ -89,6 +90,7 @@ class ContactsController extends Controller
       $c->lastname = $request->input('new_contact_lastname');
       $c->email = $request->input('new_contact_email');
       $c->phone = $request->input('new_contact_phone');
+      $c->favorite = $request->input('favoritebtn');
       $c->save();
 
 

@@ -42,6 +42,8 @@ class AlertsController extends Controller
       $a->name = $request->input('alert_name');
       $a->location = $request->input('alert_location');
       $a->description = $request->input('alert_description');
+      $a->datein = $request->input('alert_datein');
+      $a->dateout = $request->input('alert_dateout');
       $a->intime = $request->input('alert_intime');
       $a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
@@ -92,6 +94,8 @@ class AlertsController extends Controller
         $a->name = $request->input('new_alert_name');
         $a->location = $request->input('new_alert_location');
         $a->description = $request->input('new_alert_description');
+        $a->datein = $request->input('new_alert_datein');
+        $a->dateout = $request->input('new_alert_dateout');
         $a->intime = $request->input('new_alert_intime');
         $a->timeout = $request->input('new_alert_timeout');
         $a->priority = $request->input('new_alert_priority');

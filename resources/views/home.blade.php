@@ -7,7 +7,7 @@
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
                     @include('includes.errorflash')
-                    
+
                     You are logged in!
                 </div>
             </div>
@@ -22,14 +22,14 @@
             <div class="card mb-3">
                 <div class="card-header">Alerts</div>
                 <div class="card-body">
-                  <p>Here is where alert information will be displayed. Probably will only display one or two active alerts (if any) with a "see more option" and the ability to go the actual alerts page to edit/delete/create</p>
+                  <p>Here is where alert information will be displayed. Will display most imminent alert with standard links, and will include a see more link to the actual alerts index.</p>
                 </div>
             </div>
 
             <div class="card mb-3">
                 <div class="card-header">Contacts</div>
                 <div class="card-body">
-                  <p>Here is where some of the contacts will be displayed. Possibly a favorites list. See more will take you to actual contacts index.</p>
+                  <p>Here is where top 5 favorite contacts will be displayed.</p>
                 </div>
             </div>
 

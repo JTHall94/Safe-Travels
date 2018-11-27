@@ -8,6 +8,35 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #CDD6D5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+//#0D3257 #97A7B7 #B2C2B9 #BDD6E0 #65754D #C7DBA9
+
+//#4390bc #68a7ca #8dbdd8 #b2d3e6 #d8e9f3
+
+//#0DA9FF #2AC475 #82FF00 #E8C10C #FF7D0D
+
+//#233656 #415B76 #7B9BA6 #CDD6D5 #EEF4F2
+
+//NOTE: I think this is the one.
+//#CFF09E #A8DBA8 #79BD9A #3B8686 #0B486B
+
+
+html, body {
+  background-color: #EEF4F2;
+}
+
+.card-header, .card-footer {
+  background-color: #7B9BA6;
+}
+
+.card-body {
+  background-color: #CDD6D5;
+}
+
+.table {
+  background-color: #CDD6D5;
 }

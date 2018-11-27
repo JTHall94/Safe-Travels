@@ -28,7 +28,7 @@
               </div>
               <div class="form-group">
                   <label for="favoritebtn" class="font-weight-bold">Favorite</label>
-                  <input type="checkbox" class="ml-1" id="favoritebtn" name="favoritebtn" value="favorite">
+                  <input type="checkbox" class="ml-1" id="favoritebtn" name="favoritebtn" value="Yes" {{$c->favorite ? 'checked' : ''}}>
               </div>
                   <button type="submit" class="btn btn-primary float-right">Update</button>
               </div>
@@ -38,3 +38,6 @@
   </div>
 
 @endsection
+
+
+<!-- <input oninput="check_checkbox('bookmark_check_new', 'new_bookmark_url')"  name="new_bookmark_url" id="new_bookmark_url" class="mt-2 form-control" type="text" placeholder="New URL...">

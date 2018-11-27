@@ -10467,8 +10467,26 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #CDD6D5;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html,
+body {
+  background-color: #EEF4F2;
+}
+
+.card-header,
+.card-footer {
+  background-color: #7B9BA6;
+}
+
+.card-body {
+  background-color: #CDD6D5;
+}
+
+.table {
+  background-color: #CDD6D5;
 }
 

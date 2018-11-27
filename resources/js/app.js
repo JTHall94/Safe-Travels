@@ -17,6 +17,25 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+import Vue from 'vue'
+import Datetime from 'vue-datetime'
+// You need a specific loader for CSS files
+import 'vue-datetime/dist/vue-datetime.css'
+
+Vue.use(Datetime)
+
 const app = new Vue({
     el: '#app'
 });
+
+
+window.check_checkbox = function(checkbox_id) {
+    let checkbox = document.getElementById(checkbox_id);
+
+    if (checkbox.attribute('checked')) {
+        checkbox.setAttribute('checked', 'on');
+    }
+    else {
+        checkbox.removeAttribute('checked');
+    }
+}

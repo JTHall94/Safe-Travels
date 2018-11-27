@@ -18,6 +18,8 @@ class CreateAlertsTable extends Migration
             $table->string('name', 100);
             $table->string('location', 100);
             $table->text('description')->nullable();
+            $table->string('datein')->nullable();
+            $table->string('dateout')->nullable();
             $table->string('intime');
             $table->string('timeout');
             $table->string('priority')->nullable();

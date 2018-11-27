@@ -14,6 +14,7 @@ class AlertsTableSeeder extends Seeder
       $jacob = \App\User::where('name', 'Jacob')->first();
       $bob = \App\User::where('name', 'Bob')->first();
 
+
       $temp = new \App\Alerts;
       $temp->user_id = $jacob->id;
       $temp->name = 'Hiking Trip';
