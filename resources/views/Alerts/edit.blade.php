@@ -13,22 +13,27 @@
               <div class="form-group">
                   <label for="new_alert_name" class="mt-2">Name:</label>
                   <input class="form-control mb-2" type="text" id="new_alert_name" name="new_alert_name" value="{{ old('new_alert_name') ? old('new_alert_name') : $a->name }}" placeholder="Name...">
-
+              </div>
+              <div class="form-group">
                   <label for="new_alert_intime" class="mt-2">Time In:</label>
                   <input class="form-control mb-2" type="text" id="new_alert_intime" name="new_alert_intime" value="{{old('new_alert_intime') ? old('new_alert_intime') : $a->intime }}" placeholder="Time In...">
-
+              </div>
+              <div class="form-group">
                   <label for="new_alert_timeout" class="mt-2">Time Out:</label>
                   <input class="form-control mb-2" type="text" id="new_alert_timeout" name="new_alert_timeout" value="{{old('new_alert_timeout') ? old('new_alert_timeout') : $a->timeout }}" placeholder="Time Out...">
-
+              </div>
+              <div class="form-group">
                   <label for="new_alert_priority" class="mt-2">Priority:</label>
                   <input class="form-control mb-2" type="text" id="new_alert_priority" name="new_alert_priority" value="{{old('new_alert_priority') ? old('new_alert_priority') : $a->priority }}" placeholder="Priority...">
-
+              </div>
+              <div class="form-group">
                   <label for="new_alert_description" class="mt-2">Description:</label>
                   <textarea class="form-control mb-2" id="new_alert_description" name="new_alert_description" placeholder="Description...">{{old('new_alert_description') ? old('new_alert_description') : $a->description }}</textarea>
-
+              </div>
+              <div class="form-group">
                   <label for="new_alert_location" class="mt-2">Location:</label>
                   <input class="form-control mb-2" type="text" id="new_alert_location" name="new_alert_location" value="{{old('new_alert_location') ? old('new_alert_location') : $a->location }}" placeholder="Location...">
-
+              </div>
                   <button type="submit" class="btn btn-primary float-right">Update</button>
 
               </div>

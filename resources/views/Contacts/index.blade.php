@@ -12,8 +12,12 @@
             <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
               @csrf
               <div class="form-group">
-                  <label for="contact_name" class="font-weight-bold">Name</label>
-                  <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="Name..." value="{{ old('contact_name') }}">
+                  <label for="contact_firstname" class="font-weight-bold">First Name</label>
+                  <input type="text" class="form-control" id="contact_firstname" name="contact_firstname" placeholder="First Name..." value="{{ old('contact_firstname') }}">
+              </div>
+              <div class="form-group">
+                  <label for="contact_lastname" class="font-weight-bold">Last Name</label>
+                  <input type="text" class="form-control" id="contact_lastname" name="contact_lastname" placeholder="Last Name..." value="{{ old('contact_lastname') }}">
               </div>
               <div class="form-group">
                 <label for="contact_email" class="font-weight-bold">Email</label>
@@ -21,8 +25,13 @@
               </div>
               <div class="form-group">
                 <label for="contact_phone" class="font-weight-bold">Phone Number</label>
-                <input type="text" class="form-control" id="contact_phone" name="contact_phone" placeholder="Name..." value="{{ old('contact_phone') }}">
+                <input type="text" class="form-control" id="contact_phone" name="contact_phone" placeholder="Phone Number..." value="{{ old('contact_phone') }}">
               </div>
+              <div class="form-group">
+                <label for="favoritebtn" class="font-weight-bold">Favorite</label>
+                <input type="checkbox" class="ml-1" id="favoritebtn" name="favoritebtn" value="favorite">
+              </div>
+
               <button type="submit" class="btn btn-warning">Add</button>
             </form>
         </div>
@@ -32,7 +41,8 @@
               <thead>
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">Name</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Phone</th>
                   <th scope="col">Favorite</th>
@@ -44,7 +54,8 @@
             @foreach(Auth::user()->contacts as $contact)
                 <tr>
                     <th scope="row">{{$contact->id}}</th>
-                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->firstname}}</td>
+                    <td>{{$contact->lastname}}</td>
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->phone}}</td>
                     <td>Favorite</td>

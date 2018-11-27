@@ -39,7 +39,8 @@ class ContactsController extends Controller
         //NOTE: Need to work in favorite contact functionality (if still needed after review)
         $c = new \App\Contacts;
         $c->user_id = \Auth::id();
-        $c->name = $request->input('contact_name');
+        $c->firstname = $request->input('contact_firstname');
+        $c->lastname = $request->input('contact_lastname');
         $c->email = $request->input('contact_email');
         $c->phone = $request->input('contact_phone');
         $c->save();
@@ -84,7 +85,8 @@ class ContactsController extends Controller
     {
       // Create the new conttact
       $c = \App\Contacts::find($id);
-      $c->name = $request->input('new_contact_name');
+      $c->firstname = $request->input('new_contact_firstname');
+      $c->lastname = $request->input('new_contact_lastname');
       $c->email = $request->input('new_contact_email');
       $c->phone = $request->input('new_contact_phone');
       $c->save();

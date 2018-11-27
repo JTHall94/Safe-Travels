@@ -13,23 +13,33 @@
             <div class="form-group">
                 <label for="alert_name" class="font-weight-bold">Name:</label>
                 <input type="text" class="form-control" id="alert_name" name="alert_name" placeholder="Name..." value="{{ old('alert_name') }}">
-
-                <label for="alert_intime" class="mt-2">Time In:</label>
+            </div>
+            <div class="form-group">
+                <label for="alert_intime" class="mt-2 font-weight-bold">Time In:</label>
                 <input class="form-control mb-2" type="text" id="alert_intime" name="alert_intime" value="{{old('new_alert_intime')}}" placeholder="Time In...">
-
-                <label for="new_alert_timeout" class="mt-2">Time Out:</label>
+            </div>
+            <div class="form-group">
+                <label for="new_alert_timeout" class="mt-2 font-weight-bold">Time Out:</label>
                 <input class="form-control mb-2" type="text" id="alert_timeout" name="alert_timeout" value="{{old('new_alert_timeout')}}" placeholder="Time Out...">
-
-                <label for="new_alert_priority" class="mt-2">Priority:</label>
-                <input class="form-control mb-2" type="text" id="alert_priority" name="alert_priority" value="{{old('new_alert_priority')}}" placeholder="Priority...">
-
-                <label for="new_alert_description" class="mt-2">Description:</label>
+            </div>
+            <div class="form-group">
+                <label for="new_alert_description" class="mt-2 font-weight-bold">Description:</label>
                 <textarea class="form-control mb-2" id="alert_description" name="alert_description" placeholder="Description...">{{old('new_alert_description')}}</textarea>
-
-                <label for="new_alert_location" class="mt-2">Location:</label>
+            </div>
+            <div class="form-group">
+                <label for="new_alert_location" class="mt-2 font-weight-bold">Location:</label>
                 <input class="form-control mb-2" type="text" id="alert_location" name="alert_location" value="{{old('alert_location')}}" placeholder="Location...">
-
-            <button type="submit" class="btn btn-warning">Add</button>
+            </div>
+            <div class="form-group">
+                <label for="new_alert_priority" class="font-weight-bold">Priority:</label>
+                <select class="form-control" id="new_alert_priority">
+                  <option>Low</option>
+                  <option>Medium</option>
+                  <option>High</option>
+                  <option>Extreme</option>
+                </select>
+            </div>
+              <button type="submit" class="btn btn-warning">Add</button>
           </div>
 
           </form>
@@ -37,7 +47,7 @@
       </div>
 
     @foreach(Auth::user()->alerts as $alert)
-      <div class="card mt-4 mb-4">
+      <div class="card mt-5">
         <div class="card-header text-center">{{$alert->name}}</div>
         <div class="card-body">
           <div class="row">
