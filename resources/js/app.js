@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('tagged-contacts', require('./components/TaggedContacts.vue'));
 
 import Vue from 'vue'
 import Datetime from 'vue-datetime'

@@ -64,16 +64,19 @@
             </div>
             <div class="row">
               <div class="col">
-                <div class="form-group">
+
+                  <tagged-contacts :contacts='{!! $contacts = App\Contacts::where('user_id', '1')->get(); $contacts->toJson() !!}'></tagged-contacts>
+
+                <!--div class="form-group">
                   <label for="addcontact" class="font-weight-bold">Tag Contacts:</label>
                   <select class="form-control" id="addcontact" name="addcontact" placeholder="Tag your Contacts!">
                     <option disabled selected>Tag your contacts!</option>
                     <option> </option>
                     @foreach(Auth::user()->contacts as $contact)
-                      <option>{{$contact->firstname}} {{$contact->lastname}}</option>
+                      <option v-on:click="tag({{$contact->firstname}})">{{$contact->firstname}} {{$contact->lastname}}</option>
                     @endforeach
                   </select>
-                </div>
+                </div-->
               </div>
             </div>
             <div class="row">

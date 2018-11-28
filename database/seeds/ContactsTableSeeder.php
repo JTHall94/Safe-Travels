@@ -14,7 +14,7 @@ class ContactsTableSeeder extends Seeder
           $jacob = \App\User::where('name', 'Jacob')->first();
           $bob = \App\User::where('name', 'Bob')->first();
 
-          $trip = \App\Alerts::where('user_id', '$jacob->id')->first();
+
 
           $temp = new \App\Contacts;
           $temp->user_id = $jacob->id;
@@ -24,7 +24,9 @@ class ContactsTableSeeder extends Seeder
           $temp->phone= '8595951448';
           $temp->save();
 
-          $hiking->contacts()->attach($temp->id);
+          $trip = \App\Alerts::where('user_id', '1')->first();
+          $trip->contacts()->attach($temp->id);
+
 
           $temp2 = new \App\Contacts;
           $temp2->user_id = $jacob->id;

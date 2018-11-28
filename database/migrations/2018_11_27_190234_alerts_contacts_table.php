@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlertContactTable extends Migration
+class AlertsContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class AlertContactTable extends Migration
      */
     public function up()
     {
-      Schema::create('alert_contact', function (Blueprint $table) {
+      Schema::create('alerts_contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('alert_id');
-            $table->foreign('alert_id')->references('id')->on('alerts');
-            $table->unsignedInteger('contact_id');
-            $table->foreign('contact_id')->references('id')->on('contacts');
+            $table->unsignedInteger('alerts_id');
+            $table->foreign('alerts_id')->references('id')->on('alerts');
+            $table->unsignedInteger('contacts_id');
+            $table->foreign('contacts_id')->references('id')->on('contacts');
             $table->timestamps();
         });
 
@@ -31,6 +31,6 @@ class AlertContactTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alert_contact');
+        Schema::dropIfExists('alerts_contacts');
     }
 }
