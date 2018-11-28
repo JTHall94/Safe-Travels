@@ -47511,7 +47511,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       tagged: [],
-      taggedDisplayText: ''
+      taggedDisplayText: undefined
     };
   },
 
@@ -47523,6 +47523,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     tag: function tag(contact) {
 
       this.tagged.push(this.taggedDisplayText);
+      this.taggedDisplayText = undefined;
       /*if(this.tagged.includes(contact)) {
           console.log('Already in there');
           alert('This is working.');
@@ -47599,14 +47600,27 @@ var render = function() {
         }
       },
       [
-        _c("option", { attrs: { disabled: "", selected: "" } }, [
-          _vm._v("Tag your contacts!")
-        ]),
+        _c(
+          "option",
+          {
+            attrs: { disabled: "", selected: "" },
+            domProps: { value: undefined }
+          },
+          [_vm._v("Tag your contacts!")]
+        ),
         _vm._v(" "),
         _vm._l(_vm.contacts, function(contact) {
-          return _c("option", [
-            _vm._v(_vm._s(contact.firstname) + " " + _vm._s(contact.lastname))
-          ])
+          return _c(
+            "option",
+            {
+              attrs: {
+                disabled: _vm.tagged.includes(
+                  contact.firstname + " " + contact.lastname
+                )
+              }
+            },
+            [_vm._v(_vm._s(contact.firstname) + " " + _vm._s(contact.lastname))]
+          )
         })
       ],
       2

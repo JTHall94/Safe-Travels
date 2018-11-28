@@ -2,8 +2,8 @@
     <div class="form-group">
       <label for="addcontact" class="font-weight-bold">Tag Contacts:</label>
       <select v-model="taggedDisplayText" v-on:change="tag($event)" class="form-control" id="addcontact" name="addcontact" placeholder="Tag your Contacts!">
-        <option disabled selected>Tag your contacts!</option>
-        <option v-for="contact in contacts">{{contact.firstname}} {{contact.lastname}}</option>
+        <option :value="undefined" disabled selected>Tag your contacts!</option>
+        <option v-for="contact in contacts" :disabled="tagged.includes(contact.firstname + ' ' + contact.lastname)">{{contact.firstname}} {{contact.lastname}}</option>
       </select>
         <div class="row">
           <div class="col" v-for="tags in tagged">
@@ -22,7 +22,7 @@
       data: function() {
         return {
           tagged : [],
-          taggedDisplayText : ''
+          taggedDisplayText : undefined
         }
 
       },
@@ -36,6 +36,7 @@
             tag: function(contact) {
 
               this.tagged.push(this.taggedDisplayText);
+              this.taggedDisplayText = undefined;
               /*if(this.tagged.includes(contact)) {
                   console.log('Already in there');
                   alert('This is working.');
