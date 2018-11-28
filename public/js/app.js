@@ -47507,7 +47507,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-  props: ['contacts'],
+  props: ['contacts', 'tags'],
 
   data: function data() {
     return {
@@ -47516,7 +47516,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
 
-  mounted: function mounted() {},
+  mounted: function mounted() {
+
+    for (var i = 0; i < this.tags.length; i++) {
+      for (var j = 0; j < this.contacts.length; j++) {
+        if (this.tags[i].id === this.contacts[j].id) {
+          this.tagged.push(this.contacts[j]);
+        }
+      }
+
+      console.log(this.tagged);
+    }
+
+    console.log(this.contacts);
+    console.log(this.tags);
+  },
 
 
   methods: {

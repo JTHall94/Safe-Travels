@@ -18,7 +18,7 @@
 
     export default {
 
-      props: ['contacts'],
+      props: ['contacts', 'tags'],
 
       data: function() {
         return {
@@ -30,6 +30,18 @@
 
         mounted() {
 
+           for (let i=0; i<this.tags.length; i++) {
+              for (let j=0; j<this.contacts.length; j++) {
+                if (this.tags[i].id===this.contacts[j].id) {
+                  this.tagged.push(this.contacts[j]);
+                }
+              }
+
+            console.log(this.tagged);
+          }
+
+          console.log(this.contacts);
+          console.log(this.tags);
         },
 
         methods: {

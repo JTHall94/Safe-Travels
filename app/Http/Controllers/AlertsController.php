@@ -89,7 +89,10 @@ class AlertsController extends Controller
     public function edit($id)
     {
       $a = \App\Alerts::find($id);
-      return view('alerts.edit', compact('a'));
+      $id = \Auth::user()->id;
+      $contacts = \App\Contacts::where('user_id', '=', $id);
+      $tags = $a->contacts;
+      return view('alerts.edit', compact('a', 'contacts', 'tags'));
     }
 
     /**
@@ -113,6 +116,11 @@ class AlertsController extends Controller
         $a->priority = $request->input('new_alert_priority');
         //NOTE: Add clothing/car fields?
         $a->save();
+
+          $a->contacts()->detach();
+        foreach ($request->input('taggedcontacts') as $tags) {
+          $a->contacts()->attach($tags);
+        }
 
         // messaging
        $request->session()->flash('status', 'Alert updated!');

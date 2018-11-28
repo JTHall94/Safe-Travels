@@ -64,7 +64,7 @@
             </div>
             <div class="row">
               <div class="col">
-                  <tagged-contacts :contacts='{!! $contacts = App\Contacts::where('user_id', '1')->get(); $contacts->toJson() !!}'></tagged-contacts>
+                  <tagged-contacts :contacts='{!! $contacts->get()->toJson() !!}' :tags='{!! $tags->toJson() !!}'></tagged-contacts>
               </div>
             </div>
             <div class="row">
