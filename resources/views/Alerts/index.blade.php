@@ -64,19 +64,7 @@
             </div>
             <div class="row">
               <div class="col">
-
-                  <tagged-contacts :contacts='{!! $contacts = App\Contacts::where('user_id', '1')->get(); $contacts->toJson() !!}'></tagged-contacts>
-
-                <!--div class="form-group">
-                  <label for="addcontact" class="font-weight-bold">Tag Contacts:</label>
-                  <select class="form-control" id="addcontact" name="addcontact" placeholder="Tag your Contacts!">
-                    <option disabled selected>Tag your contacts!</option>
-                    <option> </option>
-                    @foreach(Auth::user()->contacts as $contact)
-                      <option v-on:click="tag({{$contact->firstname}})">{{$contact->firstname}} {{$contact->lastname}}</option>
-                    @endforeach
-                  </select>
-                </div-->
+                  <tagged-contacts :contacts='{!! $contacts->get()->toJson() !!}'></tagged-contacts>
               </div>
             </div>
             <div class="row">
@@ -137,6 +125,14 @@
             <div class="col">
               <label for="alertdisplaylocation" class="mt-2">Location:</label>
               <input class="form-control mb-2" type="text" id="alertdisplaylocation" name="alertdisplaylocation" value="{{$alert->location}}" readonly>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="taggedcontactdisplay" class="mt-2">Tagged Contacts:</label>
+              @foreach($alert->contacts as $contact)
+                <input class="form-control mb-2" type="text" id="taggedcontactsdisplay" name="taggedcontactsdisplay" value="{{$contact->firstname}} {{$contact->lastname}}" readonly>
+              @endforeach
             </div>
           </div>
         </div>

@@ -64,6 +64,11 @@
             </div>
             <div class="row">
               <div class="col">
+                  <tagged-contacts :contacts='{!! $contacts = App\Contacts::where('user_id', '1')->get(); $contacts->toJson() !!}'></tagged-contacts>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
                 <div class="form-group">
                     <label for="new_alert_priority" class="font-weight-bold">Priority:</label>
                     <select class="form-control" id="new_alert_priority" name="new_alert_priority" value="{{ old('new_alert_priority') ? old('new_alert_priority') : $a->priority }}">

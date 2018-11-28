@@ -47502,6 +47502,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47521,6 +47522,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
 
     tag: function tag(contact) {
+
+      console.log(contact);
+      console.log(this.taggedDisplayText);
 
       this.tagged.push(this.taggedDisplayText);
       this.taggedDisplayText = undefined;
@@ -47613,11 +47617,8 @@ var render = function() {
           return _c(
             "option",
             {
-              attrs: {
-                disabled: _vm.tagged.includes(
-                  contact.firstname + " " + contact.lastname
-                )
-              }
+              attrs: { disabled: _vm.tagged.includes(contact) },
+              domProps: { value: contact }
             },
             [_vm._v(_vm._s(contact.firstname) + " " + _vm._s(contact.lastname))]
           )
@@ -47629,20 +47630,26 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row" },
-      _vm._l(_vm.tagged, function(tags) {
+      _vm._l(_vm.tagged, function(tag) {
         return _c("div", { staticClass: "col" }, [
           _c(
             "p",
             {
-              staticClass: "ml-1 btn btn-success",
+              staticClass: "btn btn-success",
               on: {
                 click: function($event) {
-                  _vm.remove(tags)
+                  _vm.remove(tag)
                 }
               }
             },
-            [_vm._v(_vm._s(tags))]
-          )
+            [_vm._v(_vm._s(tag.firstname) + " " + _vm._s(tag.lastname))]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "ml-1 btn btn-success",
+            attrs: { type: "hidden", name: "taggedcontacts[]", readonly: "" },
+            domProps: { value: tag.id }
+          })
         ])
       })
     )

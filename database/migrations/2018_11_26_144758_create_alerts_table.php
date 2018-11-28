@@ -22,6 +22,7 @@ class CreateAlertsTable extends Migration
             $table->string('dateout')->nullable();
             $table->string('intime');
             $table->string('timeout');
+            $table->json('taggedcontacts')->nullable();
             $table->string('priority')->nullable();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

@@ -13,7 +13,9 @@ class AlertsController extends Controller
      */
     public function index()
     {
-      return view('alerts.index');
+      $id = \Auth::user()->id;
+      $contacts = \App\Contacts::where('user_id', '=', $id);
+      return view('alerts.index', compact('contacts'));
     }
 
     /**
@@ -47,8 +49,18 @@ class AlertsController extends Controller
       $a->intime = $request->input('alert_intime');
       $a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
+
+
+      //$a->taggedcontacts = $request->input('taggedcontacts[]');
+      //dd($request->input('taggedcontacts'));
+
+
       //NOTE: Add clothing/car fields?
       $a->save();
+
+      foreach ($request->input('taggedcontacts') as $tags) {
+        $a->contacts()->attach($tags);
+      }
 
       // messaging
      $request->session()->flash('status', 'New alert created!');
