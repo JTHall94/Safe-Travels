@@ -46,18 +46,19 @@ class SendAlerts extends Command
 
         foreach ($tests as $test) {
 
-          $dt = Carbon::parse($test->timeout);
-          $hour = substr($test->timeout, 0, 2);
+          //$dt = Carbon::parse($test->end);
+
           //dd($hour);
 
 
 
 
 
-        $this->alerts = \App\Alerts::where('timeout', '!=', $carbon)->get();
-        
+        $this->alerts = \App\Alerts::where('end', '<', $carbon)->get();
 
-        // dd($this->alerts);
+
+
+
 
         $twilioConfig = config('services.twilio');
         $accountSid = $twilioConfig['twilio_account_sid'];
@@ -67,6 +68,9 @@ class SendAlerts extends Command
         $this->twilioClient = new Client($accountSid, $authToken);
 
       };
+
+      //dd($this->alerts);
+
 
 
         $this->alerts->each(

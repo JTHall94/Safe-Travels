@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AlertsController extends Controller
 {
@@ -45,8 +46,8 @@ class AlertsController extends Controller
       $a->name = $request->input('alert_name');
       $a->location = $request->input('alert_location');
       $a->description = $request->input('alert_description');
-      $a->start = $request->input('alert_start');
-      $a->end = $request->input('alert_end');
+      $a->start = Carbon::parse($request->input('alert_start'));
+      $a->end = Carbon::parse($request->input('alert_end'));
       //$a->intime = $request->input('alert_intime');
       //$a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
@@ -116,8 +117,8 @@ class AlertsController extends Controller
         $a->name = $request->input('new_alert_name');
         $a->location = $request->input('new_alert_location');
         $a->description = $request->input('new_alert_description');
-        $a->start = $request->input('new_alert_start');
-        $a->end = $request->input('new_alert_end');
+        $a->start = Carbon::parse($request->input('new_alert_start'));
+        $a->end = Carbon::parse($request->input('new_alert_end'));
         //$a->intime = $request->input('new_alert_intime');
         //$a->timeout = $request->input('new_alert_timeout');
         $a->priority = $request->input('new_alert_priority');
