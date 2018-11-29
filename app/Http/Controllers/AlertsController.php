@@ -41,22 +41,28 @@ class AlertsController extends Controller
       //NOTE: Need to work in map functionality and google maps api calls.
       $a = new \App\Alerts;
       $a->user_id = \Auth::id();
+      $a->creator = \Auth::user()->name;
       $a->name = $request->input('alert_name');
       $a->location = $request->input('alert_location');
       $a->description = $request->input('alert_description');
-      $a->datein = $request->input('alert_datein');
-      $a->dateout = $request->input('alert_dateout');
-      $a->intime = $request->input('alert_intime');
-      $a->timeout = $request->input('alert_timeout');
+      $a->start = $request->input('alert_start');
+      $a->end = $request->input('alert_end');
+      //$a->intime = $request->input('alert_intime');
+      //$a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
+
 
 
       //$a->taggedcontacts = $request->input('taggedcontacts[]');
       //dd($request->input('taggedcontacts'));
 
 
+
+
       //NOTE: Add clothing/car fields?
       $a->save();
+
+
 
       foreach ($request->input('taggedcontacts') as $tags) {
         $a->contacts()->attach($tags);
@@ -106,13 +112,14 @@ class AlertsController extends Controller
     {
         $a = \App\Alerts::find($id);
         $a->user_id = \Auth::id();
+        $a->creator = \Auth::user()->name;
         $a->name = $request->input('new_alert_name');
         $a->location = $request->input('new_alert_location');
         $a->description = $request->input('new_alert_description');
-        $a->datein = $request->input('new_alert_datein');
-        $a->dateout = $request->input('new_alert_dateout');
-        $a->intime = $request->input('new_alert_intime');
-        $a->timeout = $request->input('new_alert_timeout');
+        $a->start = $request->input('new_alert_start');
+        $a->end = $request->input('new_alert_end');
+        //$a->intime = $request->input('new_alert_intime');
+        //$a->timeout = $request->input('new_alert_timeout');
         $a->priority = $request->input('new_alert_priority');
         //NOTE: Add clothing/car fields?
         $a->save();

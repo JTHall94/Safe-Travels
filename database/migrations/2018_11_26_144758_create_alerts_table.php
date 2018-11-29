@@ -16,12 +16,11 @@ class CreateAlertsTable extends Migration
         Schema::create('alerts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
+            $table->string('creator', 50);
             $table->string('location', 100);
             $table->text('description')->nullable();
-            $table->string('datein')->nullable();
-            $table->string('dateout')->nullable();
-            $table->string('intime');
-            $table->string('timeout');
+            $table->string('start')->nullable();
+            $table->string('end')->nullable();
             $table->json('taggedcontacts')->nullable();
             $table->string('priority')->nullable();
             $table->unsignedInteger('user_id');

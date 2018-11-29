@@ -21,18 +21,18 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                    <label for="new_alert_datein" class="mt-2 font-weight-bold">Date In:</label>
-                    <datetime type="date" v-model="datetime" id="new_alert_datein" name="new_alert_datein" placeholder="Select Date" value="{{ old('new_alert_datein') ? old('new_alert_name') : $a->name }}"></datetime>
+                    <label for="new_alert_start" class="mt-2 font-weight-bold">Alert Start:</label>
+                    <datetime type="datetime" v-model="datetime" id="new_alert_start" name="new_alert_start" placeholder="Select Start" value="{{$a->start}}"></datetime>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                    <label for="new_alert_dateout" class="mt-2 font-weight-bold">Date Out:</label>
-                    <datetime type="date" v-model="datetime" id="new_alert_dateout" name="new_alert_dateout" placeholder="Select Date" value="{{ old('new_alert_dateout') ? old('new_alert_dateout') : $a->dateout }}"></datetime>
+                    <label for="new_alert_end" class="mt-2 font-weight-bold">Alert End:</label>
+                    <datetime type="datetime" v-model="datetime" id="new_alert_end" name="new_alert_end" placeholder="Select End" value="{{ old('new_alert_end') ? old('new_alert_end') : $a->end }}"></datetime>
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!--div class="row">
               <div class="col">
                 <div class="form-group">
                     <label for="new_alert_intime" class="mt-2 font-weight-bold">Time In:</label>
@@ -45,7 +45,7 @@
                     <datetime type="time" v-model="datetime" id="new_alert_timeout" name="new_alert_timeout" placeholder="Select Time" value="{{ old('new_alert_timeout') ? old('new_alert_timeout') : $a->timeout }}"></datetime>
                 </div>
               </div>
-            </div>
+            </div-->
             <div class="row">
               <div class="col">
                 <div class="form-group">

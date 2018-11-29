@@ -21,18 +21,18 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                    <label for="alert_datein" class="mt-2 font-weight-bold">Date In:</label>
-                    <datetime type="date" v-model="datetime" id="alert_datein" name="alert_datein" placeholder="Select Date"></datetime>
+                    <label for="alert_start" class="mt-2 font-weight-bold">Alert Start:</label>
+                    <datetime type="datetime" v-model="datetime" id="alert_start" name="alert_start" placeholder="Select Start..."></datetime>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                    <label for="alert_dateout" class="mt-2 font-weight-bold">Date Out:</label>
-                    <datetime type="date" v-model="datetime" id="alert_dateout" name="alert_dateout" placeholder="Select Date"></datetime>
+                    <label for="alert_end" class="mt-2 font-weight-bold">Alert End:</label>
+                    <datetime type="datetime" v-model="datetime" id="alert_end" name="alert_end" placeholder="Select End..."></datetime>
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!--div class="row">
               <div class="col">
                 <div class="form-group">
                     <label for="alert_intime" class="mt-2 font-weight-bold">Time In:</label>
@@ -45,7 +45,7 @@
                     <datetime type="time" v-model="datetime" id="alert_timeout" name="alert_timeout" placeholder="Select Time"></datetime>
                 </div>
               </div>
-            </div>
+            </div-->
             <div class="row">
               <div class="col">
                 <div class="form-group">
@@ -93,15 +93,15 @@
         <div class="card-body">
           <div class="row">
             <div class="col">
-              <label for="alertdisplaydatein" class="mt-2">Date In:</label>
-              <input class="form-control mb-2" type="text" id="alertdisplaydatein" name="alertdisplaydatein" value="{{$alert->datein}}" readonly>
+              <label for="alertdisplaystart" class="mt-2">Alert Start:</label>
+              <input class="form-control mb-2" type="text" id="alertdisplaystart" name="alertdisplaystart" value="{{$alert->start}}" readonly>
             </div>
             <div class="col">
-              <label for="alertdisplaydateout" class="mt-2">Date Out:</label>
-              <input class="form-control mb-2" type="text" id="alertdisplaydateout" name="alertdisplaydateout" value="{{$alert->dateout}}" readonly>
+              <label for="alertdisplayend" class="mt-2">Alert End:</label>
+              <input class="form-control mb-2" type="text" id="alertdisplayend" name="alertdisplayend" value="{{$alert->end}}" readonly>
             </div>
           </div>
-          <div class="row">
+          <!--div class="row">
             <div class="col">
               <label for="alertdisplayintime" class="mt-2">Time In:</label>
               <input class="form-control mb-2" type="text" id="alertdisplayintime" name="alertdisplayintime" value="{{$alert->intime}}" readonly>
@@ -114,7 +114,7 @@
               <label for="alertdisplaypriority" class="mt-2">Priority:</label>
               <input class="form-control mb-2" type="text" id="alertdisplaypriority" name="alertdisplaypriority" value="{{$alert->priority}}" readonly>
             </div>
-          </div>
+          </div-->
           <div class="row">
             <div class="col">
               <label for="alertdisplaydescription" class="mt-2">Description:</label>

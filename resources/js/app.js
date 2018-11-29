@@ -26,7 +26,8 @@ import 'vue-datetime/dist/vue-datetime.css'
 Vue.use(Datetime)
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
 });
 
 
