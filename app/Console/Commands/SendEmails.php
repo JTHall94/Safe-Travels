@@ -3,6 +3,9 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+
 
 class SendEmails extends Command
 {
@@ -38,5 +41,16 @@ class SendEmails extends Command
     public function handle()
     {
         $carbon = new Carbon();
+
+        $this->alerts = \App\Alerts::where('end', '<', $carbon)->get();
+
+        Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+        {
+          $message->to('jacobthall94@gmail.com');
+        });
+
+
+
+
     }
 }
