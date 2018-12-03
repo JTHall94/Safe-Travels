@@ -22,6 +22,8 @@
         }"
         />
     </GmapMap>
+    <input type="hidden" :value="alertlat" name="alertlat">
+    <input type="hidden" :value="alertlng" name="alertlng">
   </div>
 </template>
 
@@ -112,7 +114,7 @@ Vue.use(VueGoogleMaps, {
         this.alertlat = this.place.geometry.location.lat();
         this.alertlng = this.place.geometry.location.lng();
         this.mapzoom = 10;
-        console.log(place);
+        //console.log(place);
         //console.log(this.place.geometry.location.lat());
       },
       usePlace(place) {

@@ -47,6 +47,8 @@ class AlertsController extends Controller
       $a->creator = \Auth::user()->name;
       $a->name = $request->input('alert_name');
       $a->location = $request->input('alert_location');
+      $a->alertlat = $request->input('alertlat');
+      $a->alertlng = $request->input('alertlng');
       $a->description = $request->input('alert_description');
       $a->start = Carbon::parse($request->input('alert_start'));
       $a->end = Carbon::parse($request->input('alert_end'));
@@ -125,6 +127,8 @@ class AlertsController extends Controller
         //$a->intime = $request->input('new_alert_intime');
         //$a->timeout = $request->input('new_alert_timeout');
         $a->priority = $request->input('new_alert_priority');
+        $a->alertlat = $request->input('new_alert_lat');
+        $a->alertlng = $request->input('new_alert_lng');
         //NOTE: Add clothing/car fields?
         $a->save();
 

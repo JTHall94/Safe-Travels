@@ -18,6 +18,8 @@ class CreateAlertsTable extends Migration
             $table->string('name', 100);
             $table->string('creator', 50);
             $table->string('location', 100);
+            $table->string('alertlng')->nullable();
+            $table->string('alertlat')->nullable();
             $table->text('description')->nullable();
             $table->string('start')->nullable();
             $table->string('end')->nullable();

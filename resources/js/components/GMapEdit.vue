@@ -2,26 +2,28 @@
   <div>
     <label>
       AutoComplete
-      <GmapAutocomplete @place_changed="setPlace" id="new_alert_location" name="new_alert_location" :value="alert.location ? alert.location : '' ">
+      <GmapAutocomplete @place_changed="setPlace" id="new_alert_location" name="new_alert_location" :value="alertlocation">
       </GmapAutocomplete>
       <!--button @click="usePlace">Add</button-->
     </label>
     <br/>
 
-    <GmapMap style="width: 600px; height: 300px;" :zoom="1" :center="{lat: 0, lng: 0}">
+    <GmapMap style="width: 600px; height: 300px;" :zoom="10" :center="{lat: alertlat , lng: alertlng}">
       <GmapMarker v-for="(marker, index) in markers"
         :key="index"
         :position="marker.position"
         />
       <GmapMarker
-        v-if="this.place"
+        v-if="this.alert"
         label="★"
         :position="{
-          lat: this.place.geometry.location.lat(),
-          lng: this.place.geometry.location.lng(),
+          lat: alertlat,
+          lng: alertlng,
         }"
         />
     </GmapMap>
+    <input type="hidden" name="new_alert_lat" :value="alertlat">
+    <input type="hidden" name="new_alert_lng" :value="alertlng">
   </div>
 </template>
 
@@ -94,7 +96,23 @@ Vue.use(VueGoogleMaps, {
 
           markers: [],
           place: null,
+          alertlat: parseFloat(this.alert.alertlat),
+          alertlng: parseFloat(this.alert.alertlng),
+          alertlocation: '',
         }
+      },
+
+      mounted: function() {
+
+        /*this.markers.push({
+          position: {
+            lat: parseFloat(this.alert.alertlat),
+            lng: parseFloat(this.alert.alertlng),
+          }
+        })*/
+
+        this.alertlocation = this.alert.location
+
       },
 
       methods: {
@@ -103,7 +121,13 @@ Vue.use(VueGoogleMaps, {
         this.description = description;
       },
       setPlace(place) {
-        this.place = place
+        this.place = place;
+        this.alertlocation = this.place.formatted_address;
+        this.alertlat = this.place.geometry.location.lat(),
+        this.alertlng = this.place.geometry.location.lng(),
+
+        console.log(place);
+
       },
       usePlace(place) {
         if (this.place) {
