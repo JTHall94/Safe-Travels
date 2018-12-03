@@ -59,18 +59,8 @@ const app = new Vue({
 
     data: {
 
-    datetime: '',
-  }
+    datetimestart: '',
+    datetimeend: '',
+  },
+  
 });
-
-
-window.check_checkbox = function(checkbox_id) {
-    let checkbox = document.getElementById(checkbox_id);
-
-    if (checkbox.attribute('checked')) {
-        checkbox.setAttribute('checked', 'on');
-    }
-    else {
-        checkbox.removeAttribute('checked');
-    }
-}

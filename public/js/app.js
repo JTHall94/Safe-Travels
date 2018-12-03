@@ -25001,50 +25001,42 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('g-map-edit', __webpack_re
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue2_google_maps__, {
-    load: {
-        key: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).MIX_GOOGLE_API_KEY
-        //libraries: 'places', // This is required if you use the Autocomplete plugin
-        // OR: libraries: 'places,drawing'
-        // OR: libraries: 'places,drawing,visualization'
-        // (as you require)
+  load: {
+    key: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).MIX_GOOGLE_API_KEY
+    //libraries: 'places', // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
 
-        //// If you want to set the version, you can do so:
-        // v: '3.26',
-    }
+    //// If you want to set the version, you can do so:
+    // v: '3.26',
+  }
 
-    //// If you intend to programmatically custom event listener code
-    //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-    //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-    //// you might need to turn this on.
-    // autobindAllEvents: false,
+  //// If you intend to programmatically custom event listener code
+  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
+  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
+  //// you might need to turn this on.
+  // autobindAllEvents: false,
 
-    //// If you want to manually install components, e.g.
-    //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
-    //// Vue.component('GmapMarker', GmapMarker)
-    //// then disable the following:
-    // installComponents: true,
+  //// If you want to manually install components, e.g.
+  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+  //// Vue.component('GmapMarker', GmapMarker)
+  //// then disable the following:
+  // installComponents: true,
 });
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_datetime___default.a);
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#app',
+  el: '#app',
 
-    data: {
+  data: {
 
-        datetime: ''
-    }
+    datetimestart: '',
+    datetimeend: ''
+  }
+
 });
-
-window.check_checkbox = function (checkbox_id) {
-    var checkbox = document.getElementById(checkbox_id);
-
-    if (checkbox.attribute('checked')) {
-        checkbox.setAttribute('checked', 'on');
-    } else {
-        checkbox.removeAttribute('checked');
-    }
-};
 
 /***/ }),
 /* 15 */
@@ -47567,7 +47559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
 
     //console.log(this.contacts);
-    //console.log(this.tags);
+    console.log(this.tags);
   },
 
 
@@ -47683,7 +47675,7 @@ var render = function() {
       "div",
       { staticClass: "row" },
       _vm._l(_vm.tagged, function(tag) {
-        return _c("div", { staticClass: "col" }, [
+        return _c("div", { staticClass: "col taggedconcol" }, [
           _c(
             "p",
             {
@@ -59908,7 +59900,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -60009,7 +60000,6 @@ var render = function() {
       _c(
         "label",
         [
-          _vm._v("\n    AutoComplete\n    "),
           _c("GmapAutocomplete", {
             attrs: { id: "alert_location", name: "alert_location" },
             on: { place_changed: _vm.setPlace }
@@ -60292,6 +60282,7 @@ var render = function() {
             "label",
             [
               _c("GmapAutocomplete", {
+                staticClass: "form-control",
                 attrs: {
                   id: "alertdisplaylocation",
                   name: "alertdisplaylocation",

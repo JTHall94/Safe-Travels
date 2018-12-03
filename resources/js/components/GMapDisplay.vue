@@ -10,7 +10,7 @@
 
 
     <label>
-      <GmapAutocomplete @place_changed="setPlace" id="alertdisplaylocation" name="alertdisplaylocation" :value="alert.location ? alert.location : '' " readonly>
+      <GmapAutocomplete @place_changed="setPlace" id="alertdisplaylocation" name="alertdisplaylocation" :value="alert.location ? alert.location : '' " readonly class="form-control">
       </GmapAutocomplete>
       <!--button @click="usePlace">Add</button-->
     </label>
