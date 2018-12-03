@@ -54,12 +54,17 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!--div class="row">
               <div class="col">
                 <div class="form-group">
                     <label for="alert_location" class="mt-2 font-weight-bold">Location:</label>
                     <input class="form-control mb-2" type="text" id="alert_location" name="alert_location" value="{{old('alert_location')}}" placeholder="Location...">
                 </div>
+              </div>
+            </div-->
+            <div class="row">
+              <div class="col">
+                <g-map></g-map>
               </div>
             </div>
             <div class="row">
@@ -83,6 +88,7 @@
             </div>
               <button type="submit" class="btn btn-warning">Add</button>
           </div>
+
 
           </form>
         </div>
@@ -121,10 +127,16 @@
               <textarea class="form-control mb-2" id="alertdisplaydescription" name="alertdisplaydescription" readonly>{{$alert->description}}</textarea>
             </div>
           </div>
-          <div class="row">
+          <!--div class="row">
             <div class="col">
               <label for="alertdisplaylocation" class="mt-2">Location:</label>
               <input class="form-control mb-2" type="text" id="alertdisplaylocation" name="alertdisplaylocation" value="{{$alert->location}}" readonly>
+            </div>
+          </div-->
+          <div class="row">
+            <div class="col">
+              <g-map-display :alert='{!! $alert->toJson() !!}'></g-map-display>
+
             </div>
           </div>
           <div class="row">
