@@ -15,10 +15,10 @@ class AlertsController extends Controller
      */
     public function index()
     {
+      $carbon = Carbon::now();
       $id = \Auth::user()->id;
       $contacts = \App\Contacts::where('user_id', '=', $id);
-      Mapper::location('Lexington');
-      return view('alerts.index', compact('contacts'));
+      return view('alerts.index', compact('contacts', 'carbon'));
     }
 
     /**
@@ -52,8 +52,6 @@ class AlertsController extends Controller
       $a->description = $request->input('alert_description');
       $a->start = Carbon::parse($request->input('alert_start'));
       $a->end = Carbon::parse($request->input('alert_end'));
-      //$a->intime = $request->input('alert_intime');
-      //$a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
 
 

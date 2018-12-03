@@ -22,58 +22,15 @@
               <div class="col">
                 <div class="form-group">
                     <label for="new_alert_start" class="mt-2 font-weight-bold">Alert Start:</label>
-                    <datetime type="datetime" v-model="datetime" id="new_alert_start" name="new_alert_start" placeholder="Select Start" value="{{$a->start}}"></datetime>
+                    <datetime type="datetime" v-model="datetimestart" id="new_alert_start" name="new_alert_start" placeholder="Select Start"></datetime>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
                     <label for="new_alert_end" class="mt-2 font-weight-bold">Alert End:</label>
-                    <datetime type="datetime" v-model="datetime" id="new_alert_end" name="new_alert_end" placeholder="Select End" value="{{ old('new_alert_end') ? old('new_alert_end') : $a->end }}"></datetime>
+                    <datetime type="datetime" v-model="datetimeend" id="new_alert_end" name="new_alert_end" placeholder="Select End"></datetime>
                 </div>
               </div>
-            </div>
-            <!--div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="new_alert_intime" class="mt-2 font-weight-bold">Time In:</label>
-                    <datetime type="time" v-model="datetime" id="new_alert_intime" name="new_alert_intime" placeholder="Select Time" value="{{ old('new_alert_intime') ? old('new_alert_intime') : $a->intime }}"></datetime>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-group">
-                    <label for="new_alert_timeout" class="mt-2 font-weight-bold">Time Out:</label>
-                    <datetime type="time" v-model="datetime" id="new_alert_timeout" name="new_alert_timeout" placeholder="Select Time" value="{{ old('new_alert_timeout') ? old('new_alert_timeout') : $a->timeout }}"></datetime>
-                </div>
-              </div>
-            </div-->
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="new_alert_description" class="mt-2 font-weight-bold">Description:</label>
-                    <textarea class="form-control mb-2" id="new_alert_description" name="new_alert_description" placeholder="Description...">{{ old('new_alert_description') ? old('new_alert_description') : $a->description }}</textarea>
-                </div>
-              </div>
-            </div>
-            <!-- div class="row">
-              <div class="col">
-                <div class="form-group">
-                    <label for="new_alert_location" class="mt-2 font-weight-bold">Location:</label>
-                    <input class="form-control mb-2" type="text" id="new_alert_location" name="new_alert_location" value="{{ old('new_alert_location') ? old('new_alert_location') : $a->location }}" placeholder="Location...">
-                </div>
-              </div>
-            </div-->
-            <div class="row">
-              <div class="col">
-                <g-map-edit :alert='{!! $a->toJson() !!}'></g-map-edit>
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                  <tagged-contacts :contacts='{!! $contacts->get()->toJson() !!}' :tags='{!! $tags->toJson() !!}'></tagged-contacts>
-              </div>
-            </div>
-            <div class="row">
               <div class="col">
                 <div class="form-group">
                     <label for="new_alert_priority" class="font-weight-bold">Priority:</label>
@@ -88,12 +45,34 @@
             </div>
             <div class="row">
               <div class="col">
+                <div class="form-group">
+                    <label for="new_alert_description" class="mt-2 font-weight-bold">Description:</label>
+                    <textarea class="form-control mb-2" id="new_alert_description" name="new_alert_description" placeholder="Description...">{{ old('new_alert_description') ? old('new_alert_description') : $a->description }}</textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                  <tagged-contacts :contacts='{!! $contacts->get()->toJson() !!}' :tags='{!! $tags->toJson() !!}'></tagged-contacts>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <g-map-edit :alert='{!! $a->toJson() !!}'></g-map-edit>
+
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col">
                 <a href="/alerts" class="btn btn-warning">Cancel</a>
               </div>
               <div class="col">
                 <button type="submit" class="btn btn-primary float-right">Update</button>
               </div>
             </div>
+        </div>
           </div>
           </form>
         </div>

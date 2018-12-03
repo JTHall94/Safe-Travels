@@ -6,7 +6,7 @@
         <option v-for="contact in contacts" :disabled="tagged.includes(contact)" :value="contact">{{contact.firstname}} {{contact.lastname}}</option>
       </select>
         <div class="row">
-          <div class="col" v-for="tag in tagged">
+          <div class="col taggedconcol" v-for="tag in tagged">
             <p class="btn btn-success" v-on:click="remove(tag)">{{tag.firstname}} {{tag.lastname}}</p>
             <input type="hidden" name="taggedcontacts[]" class="ml-1 btn btn-success"  :value="tag.id" readonly>
           </div>
@@ -43,7 +43,7 @@
         }
 
           //console.log(this.contacts);
-          //console.log(this.tags);
+          console.log(this.tags);
         },
 
         methods: {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <label>
-      AutoComplete
       <GmapAutocomplete @place_changed="setPlace" id="alert_location" name="alert_location">
       </GmapAutocomplete>
       <!--button @click="usePlace">Add</button-->
