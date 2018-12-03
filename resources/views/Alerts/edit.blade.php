@@ -54,12 +54,18 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!-- div class="row">
               <div class="col">
                 <div class="form-group">
                     <label for="new_alert_location" class="mt-2 font-weight-bold">Location:</label>
                     <input class="form-control mb-2" type="text" id="new_alert_location" name="new_alert_location" value="{{ old('new_alert_location') ? old('new_alert_location') : $a->location }}" placeholder="Location...">
                 </div>
+              </div>
+            </div-->
+            <div class="row">
+              <div class="col">
+                <g-map-edit :alert='{!! $a->toJson() !!}'></g-map-edit>
+
               </div>
             </div>
             <div class="row">

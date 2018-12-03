@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Mapper;
 
 class AlertsController extends Controller
 {
@@ -16,6 +17,7 @@ class AlertsController extends Controller
     {
       $id = \Auth::user()->id;
       $contacts = \App\Contacts::where('user_id', '=', $id);
+      Mapper::location('Lexington');
       return view('alerts.index', compact('contacts'));
     }
 
@@ -63,11 +65,12 @@ class AlertsController extends Controller
       //NOTE: Add clothing/car fields?
       $a->save();
 
-
-
-      foreach ($request->input('taggedcontacts') as $tags) {
+        if ($request->input('taggedcontacts')) {
+        foreach ($request->input('taggedcontacts') as $tags) {
         $a->contacts()->attach($tags);
       }
+    }
+
 
       // messaging
      $request->session()->flash('status', 'New alert created!');
@@ -144,15 +147,17 @@ class AlertsController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-      $referer = request()->headers->get('referer');
-      $force_delete = false;
+      //$referer = request()->headers->get('referer');
+      //$force_delete = false;
 
-      if ("/edit" == substr($referer, -5)) {
-          $force_delete = true;
-      }
+    //  if ("/edit" == substr($referer, -5)) {
+        //  $force_delete = true;
+      //}
 
       // Find catalogue
       $a = \App\Alerts::find($id);
+
+      $a->contacts()->detach();
 
 
       // Delete the contact

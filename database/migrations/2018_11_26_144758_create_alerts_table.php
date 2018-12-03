@@ -24,7 +24,7 @@ class CreateAlertsTable extends Migration
             $table->json('taggedcontacts')->nullable();
             $table->string('priority')->nullable();
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
