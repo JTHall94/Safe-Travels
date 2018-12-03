@@ -18,7 +18,7 @@
   </div>
 </div>
 
-    <GmapMap style="width: 600px; height: 300px;" :zoom="1" :center="{lat: 0, lng: 0}">
+    <GmapMap style="width: 600px; height: 300px;" :zoom="10" :center="{lat: parseFloat(alert.alertlat), lng: parseFloat(alert.alertlng)}">
       <GmapMarker v-for="(marker, index) in markers"
         :key="index"
         :position="marker.position"
@@ -27,8 +27,8 @@
         v-if="this.place"
         label="★"
         :position="{
-          lat: this.place.geometry.location.lat(),
-          lng: this.place.geometry.location.lng(),
+          lat: parseFloat(this.alert.alertlat),
+          lng: parseFloat(this.alert.alertlng),
         }"
         />
     </GmapMap>
@@ -109,6 +109,12 @@ Vue.use(VueGoogleMaps, {
 
       mounted: function () {
 
+          this.markers.push({
+            position: {
+              lat: parseFloat(this.alert.alertlat),
+              lng: parseFloat(this.alert.alertlng),
+            }
+          })
       },
 
       methods: {
@@ -118,6 +124,7 @@ Vue.use(VueGoogleMaps, {
         },
         setPlace(place) {
           this.place = place;
+          console.log(this.alert.alertlng);
           //console.log(this.place.geometry.location.lat());
         },
         usePlace(place) {

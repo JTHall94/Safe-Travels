@@ -59907,6 +59907,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -59969,7 +59971,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
       this.alertlat = this.place.geometry.location.lat();
       this.alertlng = this.place.geometry.location.lng();
       this.mapzoom = 10;
-      console.log(place);
+      //console.log(place);
       //console.log(this.place.geometry.location.lat());
     },
     usePlace: function usePlace(place) {
@@ -60048,7 +60050,17 @@ var render = function() {
             : _vm._e()
         ],
         2
-      )
+      ),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "alertlat" },
+        domProps: { value: _vm.alertlat }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "alertlng" },
+        domProps: { value: _vm.alertlng }
+      })
     ],
     1
   )
@@ -60227,7 +60239,15 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     };
   },
 
-  mounted: function mounted() {},
+  mounted: function mounted() {
+
+    this.markers.push({
+      position: {
+        lat: parseFloat(this.alert.alertlat),
+        lng: parseFloat(this.alert.alertlng)
+      }
+    });
+  },
 
   methods: {
     setDescription: function setDescription(description) {
@@ -60235,6 +60255,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     },
     setPlace: function setPlace(place) {
       this.place = place;
+      console.log(this.alert.alertlng);
       //console.log(this.place.geometry.location.lat());
     },
     usePlace: function usePlace(place) {
@@ -60291,7 +60312,13 @@ var render = function() {
         "GmapMap",
         {
           staticStyle: { width: "600px", height: "300px" },
-          attrs: { zoom: 1, center: { lat: 0, lng: 0 } }
+          attrs: {
+            zoom: 10,
+            center: {
+              lat: parseFloat(_vm.alert.alertlat),
+              lng: parseFloat(_vm.alert.alertlng)
+            }
+          }
         },
         [
           _vm._l(_vm.markers, function(marker, index) {
@@ -60306,8 +60333,8 @@ var render = function() {
                 attrs: {
                   label: "★",
                   position: {
-                    lat: this.place.geometry.location.lat(),
-                    lng: this.place.geometry.location.lng()
+                    lat: parseFloat(this.alert.alertlat),
+                    lng: parseFloat(this.alert.alertlng)
                   }
                 }
               })
@@ -60434,6 +60461,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -60479,8 +60508,23 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
       },
 
       markers: [],
-      place: null
+      place: null,
+      alertlat: parseFloat(this.alert.alertlat),
+      alertlng: parseFloat(this.alert.alertlng),
+      alertlocation: ''
     };
+  },
+
+  mounted: function mounted() {
+
+    /*this.markers.push({
+      position: {
+        lat: parseFloat(this.alert.alertlat),
+        lng: parseFloat(this.alert.alertlng),
+      }
+    })*/
+
+    this.alertlocation = this.alert.location;
   },
 
   methods: {
@@ -60489,6 +60533,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     },
     setPlace: function setPlace(place) {
       this.place = place;
+      this.alertlocation = this.place.formatted_address;
+      this.alertlat = this.place.geometry.location.lat(), this.alertlng = this.place.geometry.location.lng(), console.log(place);
     },
     usePlace: function usePlace(place) {
       if (this.place) {
@@ -60524,7 +60570,7 @@ var render = function() {
             attrs: {
               id: "new_alert_location",
               name: "new_alert_location",
-              value: _vm.alert.location ? _vm.alert.location : ""
+              value: _vm.alertlocation
             },
             on: { place_changed: _vm.setPlace }
           })
@@ -60538,7 +60584,7 @@ var render = function() {
         "GmapMap",
         {
           staticStyle: { width: "600px", height: "300px" },
-          attrs: { zoom: 1, center: { lat: 0, lng: 0 } }
+          attrs: { zoom: 10, center: { lat: _vm.alertlat, lng: _vm.alertlng } }
         },
         [
           _vm._l(_vm.markers, function(marker, index) {
@@ -60548,20 +60594,30 @@ var render = function() {
             })
           }),
           _vm._v(" "),
-          this.place
+          this.alert
             ? _c("GmapMarker", {
                 attrs: {
                   label: "★",
                   position: {
-                    lat: this.place.geometry.location.lat(),
-                    lng: this.place.geometry.location.lng()
+                    lat: _vm.alertlat,
+                    lng: _vm.alertlng
                   }
                 }
               })
             : _vm._e()
         ],
         2
-      )
+      ),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "new_alert_lat" },
+        domProps: { value: _vm.alertlat }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "hidden", name: "new_alert_lng" },
+        domProps: { value: _vm.alertlng }
+      })
     ],
     1
   )
