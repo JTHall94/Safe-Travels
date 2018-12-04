@@ -39,8 +39,8 @@
           </div>
           <div class="row">
             <div class="col">
-              <label for="alertdisplaylocation" class="mt-2">Location:</label>
-              <input class="form-control mb-2" type="text" id="alertdisplaylocation" name="alertdisplaylocation" value="{{$a->location}}" readonly>
+              <label class="mt-2">Location:</label>
+            <g-map-display :alert='{!! $a->toJson() !!}'></g-map-display>
             </div>
           </div>
           <div class="row">

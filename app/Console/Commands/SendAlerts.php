@@ -89,11 +89,12 @@ class SendAlerts extends Command
          //dd($alert);
         //$contact = \App\Contacts::where('id', '=', '1')->get();
 
+        $link = route('alerts.show', $alert->id);
         $name = $alert->user()->name;
         $recipientName = $contact->firstname;
         $time = $alert->timeout;
         $phonenumber = "+18594571050";//$contact->phone;
-        $message = "Hello $recipientName, you have been tagged in Safe Travels alert by $name called $alert->name, with a priority of $alert->priority. The alert is set to start at $alert->start, and expires at $alert->end. The location of the alert is $alert->location. You will be notified again if the alert is not resolved before it's end-time.";
+        $message = "Hello $recipientName, you have been tagged in Safe Travels alert by $name called $alert->name, with a priority of $alert->priority. The alert is set to start at $alert->start, and expires at $alert->end. The location of the alert is $alert->location. You will be notified again if the alert is not resolved before it's end-time. To view this alert in its entirety follow this link: $link.";
 
 
 

@@ -89,11 +89,12 @@ class AlertWarn extends Command
          //dd($alert);
         //$contact = \App\Contacts::where('id', '=', '1')->get();
 
+        $link = route('alerts.show', $alert->id);
         $name = $alert->user->name;
         $recipientName = $contact->firstname;
         $time = $alert->timeout;
         $phonenumber = "+18594571050";//$contact->phone;
-        $message = "Hello $recipientName, the Safe Travels alert you were tagged in by $name, called $alert->name, with a priority of $alert->priority, has reached its end time without being resolved. The alert was set to start at $alert->start, expire at $alert->end. The location of the alert is $alert->location. If you cannot get into contact with the alert creator, take action to ensure their safety.";
+        $message = "Hello $recipientName, the Safe Travels alert you were tagged in by $name, called $alert->name, with a priority of $alert->priority, has reached its end time without being resolved. The alert was set to start at $alert->start, expire at $alert->end. The location of the alert is $alert->location. If you cannot get into contact with the alert creator, take action to ensure their safety. To view this alert in its entirety follow this link: $link.";
 
 
 
