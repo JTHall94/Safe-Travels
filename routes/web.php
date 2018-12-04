@@ -23,7 +23,7 @@ Route::get('/profile', 'ProfileController@edit')->middleware('auth');
 
 Route::put('/profile', 'ProfileController@update')->middleware('auth');
 
-Route::resource('/alerts', 'AlertsController')->middleware('auth');
+Route::resource('/alerts', 'AlertsController')->middleware('auth', ['except' => ['show']]);
 
 Route::resource('/contacts', 'ContactsController')->middleware('auth');
 

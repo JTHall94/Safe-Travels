@@ -7,14 +7,14 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
 
 
-class SendEmails extends Command
+class EmailWarn extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'emails:send';
+    protected $signature = 'warnemails:send';
 
     /**
      * The console command description.
@@ -45,11 +45,11 @@ class SendEmails extends Command
         $user = \App\User::where('id', '=', '1')->first();
 
 
-        $alerts = \App\Alerts::where('created_at', '=', $carbon)->get();
+        $alerts = \App\Alerts::where('end', '<=', $carbon)->get();
 
         foreach ($alerts as $alert) {
 
-        Mail::raw('This is a notification from the Safe Travels alert system. You have been tagged by '.$user->name.'in an alert called '.$alert->name.', with a priority level marked '.$alert->priority.'. The alert begins at '.$alert->start.', and is set to end at '.$alert->end.'. Additionally, the alert is located at '.$alert->location.'.
+        Mail::raw('This is a notification from the Safe Travels alert system. The alert you were tagged in by '.$user->name.', called '.$alert->name.', with a priority level marked '.$alert->priority.', has reached its end-time without being resolved. The alert began at '.$alert->start.', and was set to end at '.$alert->end.'. Additionally, the alert is located at '.$alert->location.' If you cannot get into contact with '.$user->name.', consider taking action to ensure their safety.
         Additional descriptive details are as follows: '.$alert->description.'.' , function($message)
         {
           $message->to('jacobthall94@gmail.com');

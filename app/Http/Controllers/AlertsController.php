@@ -83,8 +83,10 @@ class AlertsController extends Controller
      */
     public function show($id)
     {
-        //NOTE: Probably want to work in a show function here, since it will be nice to independently view each alert and all of its information without anything
-        //else cluttering up the view
+      $a = \App\Alerts::find($id);
+      $u = \App\User::where('id', '=', $a->user_id)->first();
+
+      return view('alerts.show', compact('a', 'u'));
     }
 
     /**

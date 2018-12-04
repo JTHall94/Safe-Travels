@@ -7,14 +7,14 @@ use Illuminate\Console\Command;
 use Carbon\Carbon;
 use Twilio\Rest\Client;
 
-class SendAlerts extends Command
+class AlertWarn extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'alerts:send';
+    protected $signature = 'warnalerts:send';
 
     /**
      * The console command description.
@@ -54,7 +54,7 @@ class SendAlerts extends Command
 
 
 
-        $this->alerts = \App\Alerts::where('created_at', '=', $carbon)->get();
+        $this->alerts = \App\Alerts::where('end', '<=', $carbon)->get();
 
 
 
@@ -89,11 +89,11 @@ class SendAlerts extends Command
          //dd($alert);
         //$contact = \App\Contacts::where('id', '=', '1')->get();
 
-        $name = $alert->user()->name;
+        $name = $alert->user->name;
         $recipientName = $contact->firstname;
         $time = $alert->timeout;
         $phonenumber = "+18594571050";//$contact->phone;
-        $message = "Hello $recipientName, you have been tagged in Safe Travels alert by $name called $alert->name, with a priority of $alert->priority. The alert is set to start at $alert->start, and expires at $alert->end. The location of the alert is $alert->location. You will be notified again if the alert is not resolved before it's end-time.";
+        $message = "Hello $recipientName, the Safe Travels alert you were tagged in by $name, called $alert->name, with a priority of $alert->priority, has reached its end time without being resolved. The alert was set to start at $alert->start, expire at $alert->end. The location of the alert is $alert->location. If you cannot get into contact with the alert creator, take action to ensure their safety.";
 
 
 
