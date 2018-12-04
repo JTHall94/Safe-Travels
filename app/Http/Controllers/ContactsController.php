@@ -34,16 +34,20 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //This is going to be one of the most important functions of the controller.
-        // Create the new contact
-        //NOTE: Need to work in favorite contact functionality (if still needed after review)
+      $validatedData = $request->validate([
+          'contact_firstname' => 'required|max:30',
+          'contact_lastname' => 'required|max:30',
+          'contact_email' => 'required|email',
+          'contact_phone' => 'required|regex:/(\+1)[0-9]{10}/'
+      ]);
+
+
         $c = new \App\Contacts;
         $c->user_id = \Auth::id();
         $c->firstname = $request->input('contact_firstname');
         $c->lastname = $request->input('contact_lastname');
         $c->email = $request->input('contact_email');
         $c->phone = $request->input('contact_phone');
-        $c->favorite = $request->input('favoritebtn');
         $c->save();
 
         // messaging
@@ -84,13 +88,20 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+      $validatedData = $request->validate([
+          'new_contact_firstname' => 'required|max:30',
+          'new_contact_lastname' => 'required|max:30',
+          'new_contact_email' => 'required|email',
+          'new_contact_phone' => 'required|regex:/(\+1)[0-9]{10}/'
+      ]);
+
       // Create the new conttact
       $c = \App\Contacts::find($id);
       $c->firstname = $request->input('new_contact_firstname');
       $c->lastname = $request->input('new_contact_lastname');
       $c->email = $request->input('new_contact_email');
-      $c->phone = $request->input('new_contact_phone');
-      $c->favorite = $request->input('favoritebtn');
+      $c->phone = '+1' + $request->input('new_contact_phone');
       $c->save();
 
 

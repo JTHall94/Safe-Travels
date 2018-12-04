@@ -11,6 +11,15 @@
         <div class="card-body">
           <h4 class="text-center">Contact List</h4>
           <p>This page displays the data for the contact you are editing. For full integration with Safe Travels, all fields must be filled out.</p>
+          @if ($errors->any())
+             <div class="alert alert-danger">
+                 <ul>
+                     @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                     @endforeach
+                 </ul>
+             </div>
+         @endif
         </div>
       </div>
       <div class="card mt-5">
@@ -33,11 +42,8 @@
               </div>
               <div class="form-group">
                   <label for="new_contact_phone" class="font-weight-bold mt-2">Phone Number:</label>
+                  <p>* All phone numbers must begin with '+1' followed by the area code and regular digits of the number. *</p>
                   <input class="form-control mb-2" type="text" id="new_contact_phone" name="new_contact_phone" value="{{old('new_contact_phone') ? old('new_contact_phone') : $c->phone }}" placeholder="Phone Number...">
-              </div>
-              <div class="form-group">
-                  <label for="favoritebtn" class="font-weight-bold">Favorite</label>
-                  <input type="checkbox" class="ml-1" id="favoritebtn" name="favoritebtn" value="Yes" {{$c->favorite ? 'checked' : ''}}>
               </div>
                   <button type="submit" class="btn btn-primary float-right">Update</button>
               </div>

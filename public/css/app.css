@@ -10504,3 +10504,19 @@ body {
   margin: 0;
 }
 
+.clearbtn {
+  background-color: transparent;
+}
+
+#welcomepage {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+#welcomecard {
+  max-width: 750px;
+  margin: auto;
+}
+

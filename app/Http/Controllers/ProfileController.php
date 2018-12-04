@@ -13,12 +13,27 @@ class ProfileController extends Controller
       else {
           $p = new \App\Profile;
           $p->user_id = \Auth::id();
+          $p->name = ' ';
+          $p->address = ' ';
+          $p->phone = ' ';
+          $p->email = ' ';
+          $p->description = ' ';
+
           $p->save();
       }
       return view('profiles.edit', compact('p'));
   }
 
   public function update(Request $request) {
+
+    $validatedData = $request->validate([
+        'name' => 'required|max:75',
+        'address' => 'max:100',
+        'email' => 'required|email',
+        'phone' => 'required|regex:/(\+1)[0-9]{10}/'
+    ]);
+
+
       $p = \Auth::user()->profile;
       $p->name = $request->input('name');
       $p->address = $request->input('address');

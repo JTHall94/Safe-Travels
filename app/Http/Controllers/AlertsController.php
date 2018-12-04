@@ -38,6 +38,15 @@ class AlertsController extends Controller
      */
     public function store(Request $request)
     {
+
+      $validatedData = $request->validate([
+          'alert_name' => 'required|max:30',
+          'alert_location' => 'required|max:100',
+          'alert_start' => 'required|date',
+          'alert_end' =>'required|date',
+          'alert_priority' => 'required'
+      ]);
+
       //This is going to be one of the most important functions of the controller.
       // Create the new alert
       //NOTE: Need to work in map functionality and google maps api calls.
@@ -113,6 +122,15 @@ class AlertsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+      $validatedData = $request->validate([
+          'new_alert_name' => 'required|max:30',
+          'new_alert_location' => 'required|max:100',
+          'new_alert_start' => 'required|date',
+          'new_alert_end' =>'required|date',
+          'new_alert_priority' => 'required'
+      ]);
+
         $a = \App\Alerts::find($id);
         $a->user_id = \Auth::id();
         $a->creator = \Auth::user()->name;
@@ -130,8 +148,10 @@ class AlertsController extends Controller
         $a->save();
 
           $a->contacts()->detach();
+        if ($request->input('taggedcontacts')) {
         foreach ($request->input('taggedcontacts') as $tags) {
           $a->contacts()->attach($tags);
+          }
         }
 
         // messaging
