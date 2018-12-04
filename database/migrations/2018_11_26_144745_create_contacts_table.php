@@ -19,7 +19,6 @@ class CreateContactsTable extends Migration
             $table->string('lastname', 50);
             $table->string('email', 50);
             $table->string('phone', 15);
-            $table->string('favorite')->nullable();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

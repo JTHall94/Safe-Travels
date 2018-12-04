@@ -10490,3 +10490,33 @@ body {
   background-color: #CDD6D5;
 }
 
+.taggedconcol {
+  margin-top: 1em;
+  max-width: 20% !important;
+}
+
+.vue-map-container {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.table {
+  margin: 0;
+}
+
+.clearbtn {
+  background-color: transparent;
+}
+
+#welcomepage {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+#welcomecard {
+  max-width: 750px;
+  margin: auto;
+}
+

@@ -14,9 +14,10 @@ class AlertsController extends Controller
      */
     public function index()
     {
+      $carbon = Carbon::now();
       $id = \Auth::user()->id;
       $contacts = \App\Contacts::where('user_id', '=', $id);
-      return view('alerts.index', compact('contacts'));
+      return view('alerts.index', compact('contacts', 'carbon'));
     }
 
     /**
@@ -37,6 +38,15 @@ class AlertsController extends Controller
      */
     public function store(Request $request)
     {
+
+      $validatedData = $request->validate([
+          'alert_name' => 'required|max:30',
+          'alert_location' => 'required|max:100',
+          'alert_start' => 'required|date',
+          'alert_end' =>'required|date',
+          'alert_priority' => 'required'
+      ]);
+
       //This is going to be one of the most important functions of the controller.
       // Create the new alert
       //NOTE: Need to work in map functionality and google maps api calls.
@@ -45,11 +55,11 @@ class AlertsController extends Controller
       $a->creator = \Auth::user()->name;
       $a->name = $request->input('alert_name');
       $a->location = $request->input('alert_location');
+      $a->alertlat = $request->input('alertlat');
+      $a->alertlng = $request->input('alertlng');
       $a->description = $request->input('alert_description');
       $a->start = Carbon::parse($request->input('alert_start'));
       $a->end = Carbon::parse($request->input('alert_end'));
-      //$a->intime = $request->input('alert_intime');
-      //$a->timeout = $request->input('alert_timeout');
       $a->priority = $request->input('alert_priority');
 
 
@@ -63,11 +73,12 @@ class AlertsController extends Controller
       //NOTE: Add clothing/car fields?
       $a->save();
 
-
-
-      foreach ($request->input('taggedcontacts') as $tags) {
+        if ($request->input('taggedcontacts')) {
+        foreach ($request->input('taggedcontacts') as $tags) {
         $a->contacts()->attach($tags);
       }
+    }
+
 
       // messaging
      $request->session()->flash('status', 'New alert created!');
@@ -113,6 +124,15 @@ class AlertsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+      $validatedData = $request->validate([
+          'new_alert_name' => 'required|max:30',
+          'new_alert_location' => 'required|max:100',
+          'new_alert_start' => 'required|date',
+          'new_alert_end' =>'required|date',
+          'new_alert_priority' => 'required'
+      ]);
+
         $a = \App\Alerts::find($id);
         $a->user_id = \Auth::id();
         $a->creator = \Auth::user()->name;
@@ -124,12 +144,16 @@ class AlertsController extends Controller
         //$a->intime = $request->input('new_alert_intime');
         //$a->timeout = $request->input('new_alert_timeout');
         $a->priority = $request->input('new_alert_priority');
+        $a->alertlat = $request->input('new_alert_lat');
+        $a->alertlng = $request->input('new_alert_lng');
         //NOTE: Add clothing/car fields?
         $a->save();
 
           $a->contacts()->detach();
+        if ($request->input('taggedcontacts')) {
         foreach ($request->input('taggedcontacts') as $tags) {
           $a->contacts()->attach($tags);
+          }
         }
 
         // messaging
@@ -146,15 +170,17 @@ class AlertsController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-      $referer = request()->headers->get('referer');
-      $force_delete = false;
+      //$referer = request()->headers->get('referer');
+      //$force_delete = false;
 
-      if ("/edit" == substr($referer, -5)) {
-          $force_delete = true;
-      }
+    //  if ("/edit" == substr($referer, -5)) {
+        //  $force_delete = true;
+      //}
 
       // Find catalogue
       $a = \App\Alerts::find($id);
+
+      $a->contacts()->detach();
 
 
       // Delete the contact

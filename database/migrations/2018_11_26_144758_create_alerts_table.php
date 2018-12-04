@@ -18,13 +18,15 @@ class CreateAlertsTable extends Migration
             $table->string('name', 100);
             $table->string('creator', 50);
             $table->string('location', 100);
+            $table->string('alertlng')->nullable();
+            $table->string('alertlat')->nullable();
             $table->text('description')->nullable();
             $table->string('start')->nullable();
             $table->string('end')->nullable();
             $table->json('taggedcontacts')->nullable();
             $table->string('priority')->nullable();
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
