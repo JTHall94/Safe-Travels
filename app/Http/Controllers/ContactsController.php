@@ -118,6 +118,7 @@ class ContactsController extends Controller
         // Find catalogue
         $c = \App\Contacts::find($id);
 
+        $c->alerts()->detach();
 
         // Delete the contact
         $c->delete();

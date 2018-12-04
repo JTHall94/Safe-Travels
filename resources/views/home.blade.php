@@ -9,7 +9,9 @@
                   <h4 class="text-center">Dashboard</h4>
                   <p>This is your dashboard! Here you can quickly access your profile information, contact list, and alert data by following the links below.</p>
                   <p>Additionally, this page also lists any alerts you have that are set to end on today's date. To edit or resolve those alerts, or create a new alert, please navigate to the alert page.</p>
-                  <h4><a href="/profile">Profile</a></h4> <h4><a href="/alerts">Alerts</a></h4> <h4><a href="/contacts">Contacts</a></h4>
+                      <h4 class="text-center"><a href="/profile">Profile</a></h4>
+                      <h4 class="text-center"><a href="/alerts">Alerts</a></h4>
+                      <h4 class="text-center"><a href="/contacts">Contacts</a></h4>
                 </div>
             </div>
 

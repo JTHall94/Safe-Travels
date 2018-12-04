@@ -10495,3 +10495,12 @@ body {
   max-width: 20% !important;
 }
 
+.vue-map-container {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.table {
+  margin: 0;
+}
+

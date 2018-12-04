@@ -5,10 +5,11 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header text-center">Contact List <span class="float-right"><p><a data-toggle="collapse" href="#addForm">New Contact</a></p></span></div>
         <div class="card-body">
-          <p>This is where a list of your contacts will be displayed. Each contact will display it's basic information as well as buttons for edit, delete (and possibly favorite).</p>
-          <p>At the top of the list there will also be an option for creating a new contact, which will dropdown a hidden form.</p>
+          <h4 class="text-center">Contact List</h4>
+          <p>This page displays a table containing your contacts. You can edit or delete them with the buttons in each row.</p>
+          <p>If you would like to create a new contact, click the link below.</p>
+          <h5 class="text-center"><a data-toggle="collapse" href="#addForm">New Contact</a></h5>
             <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
               @csrf
               <div class="form-group">

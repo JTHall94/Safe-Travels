@@ -6,9 +6,14 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header text-center">Edit Profile</div>
         <div class="card-body">
-          <p>This page will display an editable form with all of the user's current profile information, with save and cancel functions.</p>
+          <h4 class="text-center">Edit Profile</h4>
+          <p>This page displays your profile information. The form below is editable, just click the button at the bottom to save your changes!</p>
+        </div>
+      </div>
+      <div class="card mt-5">
+        <div class="card-header text-center">Profile</div>
+        <div class="card-body">
 
           <form class="" method="post" action="/profile">
               @csrf
