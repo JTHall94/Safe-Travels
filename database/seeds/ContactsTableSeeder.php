@@ -21,11 +21,9 @@ class ContactsTableSeeder extends Seeder
           $temp->firstname = 'Gabby';
           $temp->lastname = 'Martin';
           $temp->email = 'gahbriellah.rohse@gmail.com';
-          $temp->phone= '8595951448';
+          $temp->phone= '+18595951448';
           $temp->save();
 
-          $trip = \App\Alerts::where('user_id', '1')->first();
-          $trip->contacts()->attach($temp->id);
 
 
           $temp2 = new \App\Contacts;
@@ -33,7 +31,7 @@ class ContactsTableSeeder extends Seeder
           $temp2->firstname = 'James';
           $temp2->lastname = 'DeVisser';
           $temp2->email = 'james@james.com';
-          $temp2->phone= '8593966898';
+          $temp2->phone= '+18593966898';
           $temp2->save();
 
           $temp3 = new \App\Contacts;
@@ -41,7 +39,7 @@ class ContactsTableSeeder extends Seeder
           $temp3->firstname = 'Kevin';
           $temp3->lastname = 'Moore';
           $temp3->email = 'kevin@nlcd.com';
-          $temp3->phone= '2';
+          $temp3->phone= '+18593278744';
           $temp3->save();
 
 

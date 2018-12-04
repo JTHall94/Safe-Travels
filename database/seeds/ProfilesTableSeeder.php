@@ -19,7 +19,7 @@ class ProfilesTableSeeder extends Seeder
       $temp->user_id = $jacob->id;
       $temp->name = 'Jacob Hall';
       $temp->email = 'jacobthall94@gmail.com';
-      $temp->phone= '8594571050';
+      $temp->phone= '+18594571050';
       $temp->save();
     }
 }

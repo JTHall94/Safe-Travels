@@ -46,9 +46,11 @@
           <div class="row">
             <div class="col">
               <label for="taggedcontactdisplay" class="mt-2">Tagged Contacts:</label>
-              @foreach($a->contacts as $contact)
-                <input class="form-control mb-2" type="text" id="taggedcontactsdisplay" name="taggedcontactsdisplay" value="{{$contact->firstname}} {{$contact->lastname}}" readonly>
-              @endforeach
+              @if($a->contacts)
+                @foreach($a->contacts as $contact)
+                  <input class="form-control mb-2" type="text" id="taggedcontactsdisplay" name="taggedcontactsdisplay" value="{{$contact->firstname}} {{$contact->lastname}}" readonly>
+                @endforeach
+              @endif
             </div>
           </div>
         </div>

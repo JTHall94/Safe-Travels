@@ -42,12 +42,14 @@ class EmailWarn extends Command
     {
         $carbon = new Carbon();
 
-        $user = \App\User::where('id', '=', '1')->first();
+        //$user = \App\User::where('id', '=', '1')->first();
 
 
         $alerts = \App\Alerts::where('end', '<=', $carbon)->get();
 
         foreach ($alerts as $alert) {
+
+          $user = \App\User::where('id', '=', $alert->user_id)->first();
 
         Mail::raw('This is a notification from the Safe Travels alert system. The alert you were tagged in by '.$user->name.', called '.$alert->name.', with a priority level marked '.$alert->priority.', has reached its end-time without being resolved. The alert began at '.$alert->start.', and was set to end at '.$alert->end.'. Additionally, the alert is located at '.$alert->location.' If you cannot get into contact with '.$user->name.', consider taking action to ensure their safety.
         Additional descriptive details are as follows: '.$alert->description.'. To view this alert in its entirety follow this link: '.route('alerts.show', $alert->id).'.' , function($message)

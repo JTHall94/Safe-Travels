@@ -8,7 +8,7 @@ class ProfileController extends Controller
 {
   public function edit() {
       if (\Auth::user()->profile) {
-          $p = \App\Profile::find(\Auth::user()->id);
+          $p = \Auth::user()->profile;
       }
       else {
           $p = new \App\Profile;

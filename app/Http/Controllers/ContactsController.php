@@ -101,7 +101,7 @@ class ContactsController extends Controller
       $c->firstname = $request->input('new_contact_firstname');
       $c->lastname = $request->input('new_contact_lastname');
       $c->email = $request->input('new_contact_email');
-      $c->phone = '+1' + $request->input('new_contact_phone');
+      $c->phone = $request->input('new_contact_phone');
       $c->save();
 
 

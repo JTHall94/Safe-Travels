@@ -180,7 +180,10 @@ class AlertsController extends Controller
       // Find catalogue
       $a = \App\Alerts::find($id);
 
+
+      if ($a->contacts()) {
       $a->contacts()->detach();
+      }
 
 
       // Delete the contact
