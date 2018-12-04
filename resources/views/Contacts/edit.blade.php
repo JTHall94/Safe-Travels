@@ -2,9 +2,18 @@
 
 @section('card-content')
 
+
+
+
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
+        <div class="card-body">
+          <h4 class="text-center">Contact List</h4>
+          <p>This page displays the data for the contact you are editing. For full integration with Safe Travels, all fields must be filled out.</p>
+        </div>
+      </div>
+      <div class="card mt-5">
         <div class="card-header">Edit Contact</div>
         <div class="card-body">
           <form id="editContact" action="/contacts/{{ $c->id }}" method="post">

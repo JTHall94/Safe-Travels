@@ -5,9 +5,17 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header text-center">Edit Alert</div>
         <div class="card-body">
-          <form id="editContact" action="/alerts/{{ $a->id }}" method="post">
+          <h4 class="text-center">Edit Alert</h4>
+          <p>This page displays the data for the alert you are editing. Alert start and end points must be re-entered to ensure alert accuracy.</p>
+          <p>For full integration with Safe Travels, all fields must be filled out.</p>
+        </div>
+      </div>
+
+      <div class="card mt-5">
+        <div class="card-header text-center">Alert</div>
+        <div class="card-body">
+          <form id="editAlert" action="/alerts/{{ $a->id }}" method="post">
             @csrf
             @method('PUT')
             <div class="row">
@@ -62,7 +70,6 @@
 
               </div>
             </div>
-          </div>
           <div class="card-footer">
             <div class="row">
               <div class="col">

@@ -5,9 +5,16 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header text-center">Alert List <span class="float-right"><p><a data-toggle="collapse" href="#addForm">New Alert</a></p></span></div>
         <div class="card-body">
-          <p>This is where a list of your alerts will be displayed.</p>
+          <h4 class="text-center">Alert List</h4>
+          <p>This page displays a list of all of your alerts. You can edit or resolve them with the buttons at the bottom of each alert.</p>
+          <p>If you would like to create a new alert, click the link below.</p>
+           @if (session('status'))
+             <div class="alert alert-success" role="alert">
+                 {{ session('status') }}
+             </div>
+         @endif
+          <h5 class="text-center"><a data-toggle="collapse" href="#addForm">New Alert</a></h5>
           <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
             @csrf
             <div class="row">
@@ -63,7 +70,7 @@
                 <g-map></g-map>
               </div>
             </div>
-              <button type="submit" class="btn btn-warning">Add</button>
+              <button type="submit" class="btn btn-warning mt-2">Add</button>
           </div>
 
 
