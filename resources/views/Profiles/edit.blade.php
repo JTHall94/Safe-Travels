@@ -9,6 +9,15 @@
         <div class="card-body">
           <h4 class="text-center">Edit Profile</h4>
           <p>This page displays your profile information. The form below is editable, just click the button at the bottom to save your changes!</p>
+          @if ($errors->any())
+             <div class="alert alert-danger">
+                 <ul>
+                     @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                     @endforeach
+                 </ul>
+             </div>
+         @endif
         </div>
       </div>
       <div class="card mt-5">
@@ -25,10 +34,11 @@
                   <label for="email" class="mt-2">Email:</label>
                   <input class="form-control mb-2" type="text" id="email" name="email" value="{{old('email') ? old('email') : $p->email }}" placeholder="Email...">
 
-                  <label for="email" class="mt-2">Phone Number:</label>
+                  <label for="phone" class="mt-2">Phone Number:</label>
+                  <p>* All phone numbers must begin with '+1' followed by the area code and regular digits of the number. *</p>
                   <input class="form-control mb-2" type="text" id="phone" name="phone" value="{{old('phone') ? old('phone') : $p->phone }}" placeholder="Phone Number...">
 
-                  <label for="email" class="mt-2">Address:</label>
+                  <label for="address" class="mt-2">Address:</label>
                   <input class="form-control mb-2" type="text" id="address" name="address" value="{{old('address') ? old('address') : $p->address }}" placeholder="Adress...">
 
                   <label for="description" class="mt-2">Description:</label>

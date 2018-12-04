@@ -9,6 +9,20 @@
           <h4 class="text-center">Contact List</h4>
           <p>This page displays a table containing your contacts. You can edit or delete them with the buttons in each row.</p>
           <p>If you would like to create a new contact, click the link below.</p>
+          @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+        @if ($errors->any())
+           <div class="alert alert-danger">
+               <ul>
+                   @foreach ($errors->all() as $error)
+                       <li>{{ $error }}</li>
+                   @endforeach
+               </ul>
+           </div>
+       @endif
           <h5 class="text-center"><a data-toggle="collapse" href="#addForm">New Contact</a></h5>
             <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
               @csrf
@@ -26,13 +40,9 @@
               </div>
               <div class="form-group">
                 <label for="contact_phone" class="font-weight-bold">Phone Number</label>
+                <p>* All phone numbers must begin with '+1' followed by the area code and regular digits of the number. *</p>
                 <input type="text" class="form-control" id="contact_phone" name="contact_phone" placeholder="Phone Number..." value="{{ old('contact_phone') }}">
               </div>
-              <div class="form-group">
-                <label for="favoritebtn" class="font-weight-bold">Favorite</label>
-                <input type="checkbox" class="ml-1" id="favoritebtn" name="favoritebtn" value="Yes">
-              </div>
-
               <button type="submit" class="btn btn-warning">Add</button>
             </form>
         </div>
@@ -41,12 +51,10 @@
           <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
                   <th scope="col">First Name</th>
                   <th scope="col">Last Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Phone</th>
-                  <th scope="col">Favorite</th>
                   <th scope="col">Edit</th>
                   <th scope="col">Delete</th>
                 </tr>
@@ -54,18 +62,16 @@
               <tbody>
             @foreach(Auth::user()->contacts as $contact)
                 <tr>
-                    <th scope="row">{{$contact->id}}</th>
                     <td>{{$contact->firstname}}</td>
                     <td>{{$contact->lastname}}</td>
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->phone}}</td>
-                    <td>{{$contact->favorite}}</td>
                     <td><a href="contacts/{{ $contact->id }}/edit" class="btn"><i class="fas fa-edit"></i></a></td>
                     <td>
                       <form action="/contacts/{{ $contact->id }}" method="POST">
                       @csrf
                       @method('DELETE')
-                      <button class="btn" type="submit"><i class="text-danger fas fa-trash-alt"></i></button>
+                      <button class="btn clearbtn" type="submit"><i class="text-danger fas fa-trash-alt"></i></button>
                       </form>
                     </td>
                 </tr>

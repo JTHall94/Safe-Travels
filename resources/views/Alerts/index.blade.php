@@ -14,6 +14,15 @@
                  {{ session('status') }}
              </div>
          @endif
+         @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
           <h5 class="text-center"><a data-toggle="collapse" href="#addForm">New Alert</a></h5>
           <form id="addForm" class="collapse form clearfix pb-3 {{ $errors->any() ? 'show' : '' }}" action="" method="post">
             @csrf

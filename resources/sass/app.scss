@@ -54,3 +54,17 @@ html, body {
 .table {
   margin:0;
 }
+
+.clearbtn {
+  background-color: transparent;
+}
+
+#welcomepage {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+#welcomecard {
+  max-width: 750px;
+  margin: auto;
+}

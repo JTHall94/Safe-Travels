@@ -9,6 +9,15 @@
           <h4 class="text-center">Edit Alert</h4>
           <p>This page displays the data for the alert you are editing. Alert start and end points must be re-entered to ensure alert accuracy.</p>
           <p>For full integration with Safe Travels, all fields must be filled out.</p>
+          @if ($errors->any())
+             <div class="alert alert-danger">
+                 <ul>
+                     @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                     @endforeach
+                 </ul>
+             </div>
+         @endif
         </div>
       </div>
 
