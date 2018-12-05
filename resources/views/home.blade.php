@@ -15,7 +15,7 @@
                 </div>
             </div>
 
-@foreach(Auth::user()->alerts()->orderBy('end', 'desc')->limit(3)->get() as $alert)
+@foreach(Auth::user()->alerts()->orderBy('end', 'asc')->limit(3)->get() as $alert)
 
             <div class="card mt-5">
               <div class="card-header text-center">{{$alert->name}} @if($alert->end < $carbon) (OVERDUE) @endif</div>

@@ -86,7 +86,7 @@
           </form>
         </div>
 
-    @foreach(Auth::user()->alerts()->orderBy('end', 'desc')->get() as $alert)
+    @foreach(Auth::user()->alerts()->orderBy('end', 'asc')->get() as $alert)
       <div class="card mt-5">
         <div class="card-header text-center">{{$alert->name}} @if($alert->end < $carbon) (OVERDUE) @endif</div>
         <div class="card-body">

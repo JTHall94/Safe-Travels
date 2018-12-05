@@ -32,7 +32,7 @@ class User extends Authenticatable
         return $this->hasOne('\App\Profile');
     }
     public function alerts() {
-        return $this->hasMany('\App\Alerts')->orderBy('name');
+        return $this->hasMany('\App\Alerts');
     }
 
     public function contacts() {
