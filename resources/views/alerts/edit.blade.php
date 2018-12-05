@@ -74,7 +74,7 @@
             </div>
             <div class="row">
               <div class="col">
-                <g-map-edit :alert='{!! $a->toJson() !!}'></g-map-edit>
+                <g-map-edit :alert='{{ $a->toJson() }}'></g-map-edit>
               </div>
             </div>
             <div class="row mt-2">

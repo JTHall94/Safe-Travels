@@ -51,7 +51,7 @@
                 <div class="row">
                   <div class="col">
                     <label class="mt-2">Location:</label>
-                    <g-map-display :alert='{!! $alert->toJson() !!}'></g-map-display>
+                    <g-map-display :alert='{{ $alert->toJson() }}'></g-map-display>
                   </div>
                 </div>
 
@@ -62,8 +62,9 @@
                         <button class="btn btn-danger mt-2" type="submit">Resolve</i></button>
             </div>
           </div>
-        </div>
+
 
 @endforeach
-
+    </div>
+</div>
 @endsection

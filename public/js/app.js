@@ -60094,6 +60094,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -60104,8 +60133,27 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
   load: {
     key: 'AIzaSyChEtjZl8cEGdECNhMPPA31y41ciVPhQss',
     libraries: 'places'
+    //process.env.MIX_GOOGLE_API_KEY,
+    //libraries: 'places', // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
 
+    //// If you want to set the version, you can do so:
+    // v: '3.26',
   }
+
+  //// If you intend to programmatically custom event listener code
+  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
+  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
+  //// you might need to turn this on.
+  // autobindAllEvents: false,
+
+  //// If you want to manually install components, e.g.
+  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+  //// Vue.component('GmapMarker', GmapMarker)
+  //// then disable the following:
+  // installComponents: true,
 });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60140,6 +60188,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     },
     setPlace: function setPlace(place) {
       this.place = place;
+      console.log(this.alert.alertlng);
+      //console.log(this.place.geometry.location.lat());
     },
     usePlace: function usePlace(place) {
       if (this.place) {
@@ -60150,6 +60200,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
           }
 
         });
+        //console.log(lat);
         this.place = null;
       }
     }
