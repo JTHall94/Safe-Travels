@@ -7,7 +7,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h4 class="text-center">Contact List</h4>
           <p>This page displays the data for the contact you are editing. For full integration with Safe Travels, all fields must be filled out.</p>
@@ -46,6 +46,7 @@
                   <input class="form-control mb-2" type="text" id="new_contact_phone" name="new_contact_phone" value="{{old('new_contact_phone') ? old('new_contact_phone') : $c->phone }}" placeholder="Phone Number...">
               </div>
                   <button type="submit" class="btn btn-primary float-right">Update</button>
+                  <a href="{{ url('/contacts') }}" class="btn btn-danger">Cancel</a>
               </div>
         </div>
       </div>

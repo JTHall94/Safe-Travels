@@ -5,7 +5,7 @@
 <!-- NOTE: Need to add Profile Picture functionality -->
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h4 class="text-center">Edit Profile</h4>
           <p>This page displays your profile information. The form below is editable, just click the button at the bottom to save your changes!</p>
@@ -47,7 +47,7 @@
 
               <div>
                   <button type="submit" class="ml-2 float-right btn btn-primary">Save</button>
-                  <a href="{{ url('/home') }}" class="float-right btn btn-secondary">Cancel</a>
+                  <a href="{{ url('/home') }}" class="btn btn-danger">Cancel</a>
               </div>
 
           </form>

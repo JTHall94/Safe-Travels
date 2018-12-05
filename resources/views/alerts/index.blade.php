@@ -4,7 +4,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h4 class="text-center">Alert List</h4>
           <p>This page displays a list of all of your alerts. You can edit or resolve them with the buttons at the bottom of each alert.</p>
@@ -79,7 +79,7 @@
                 <g-map></g-map>
               </div>
             </div>
-              <button type="submit" class="btn btn-warning mt-2">Add</button>
+              <button type="submit" class="btn btn-primary float-right mt-2">Add</button>
           </div>
 
 
@@ -130,22 +130,15 @@
               <g-map-display :alert='{!! $alert->toJson() !!}'></g-map-display>
             </div>
           </div>
-        </div>
-        <div class="card-footer">
-          <div class="row text-center">
-            <div class="col">
-              <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary">Edit</a>
-            </div>
-            <div class="col">
+
+              <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary float-right mt-2">Edit</a>
                 <form action="/alerts/{{ $alert->id }}" method="POST">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Resolve</i></button>
-                </form>
-            </div>
-        </div>
+                  <button class="btn btn-danger mt-2" type="submit">Resolve</i></button>
       </div>
     </div>
+  </div>
     @endforeach
 
 

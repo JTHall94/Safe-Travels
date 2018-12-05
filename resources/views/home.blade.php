@@ -3,7 +3,7 @@
 @section('card-content')
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card mt-2 mb-5">
+            <div class="card mt-4 mb-5">
                 <div class="card-body">
                     @include('includes.errorflash')
                   <h4 class="text-center">Dashboard</h4>
@@ -54,22 +54,15 @@
                     <g-map-display :alert='{!! $alert->toJson() !!}'></g-map-display>
                   </div>
                 </div>
-              </div>
-              <div class="card-footer">
-                <div class="row text-center">
-                  <div class="col">
-                    <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary">Edit</a>
-                  </div>
-                  <div class="col">
+
+                    <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary float-right mt-2">Edit</a>
                       <form action="/alerts/{{ $alert->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Resolve</i></button>
-                      </form>
-                  </div>
-              </div>
+                        <button class="btn btn-danger mt-2" type="submit">Resolve</i></button>
             </div>
           </div>
+        </div>
 
 @endforeach
 

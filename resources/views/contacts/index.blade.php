@@ -4,7 +4,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h4 class="text-center">Contact List</h4>
           <p>This page displays a table containing your contacts. You can edit or delete them with the buttons in each row.</p>
@@ -43,7 +43,7 @@
                 <p>* All phone numbers must begin with '+1' followed by the area code and regular digits of the number. *</p>
                 <input type="text" class="form-control" id="contact_phone" name="contact_phone" placeholder="Phone Number..." value="{{ old('contact_phone') }}">
               </div>
-              <button type="submit" class="btn btn-warning">Add</button>
+              <button type="submit" class="btn btn-primary float-right">Add</button>
             </form>
         </div>
       </div>

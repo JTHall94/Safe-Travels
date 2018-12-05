@@ -4,7 +4,7 @@
 
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card">
+      <div class="card mt-4">
         <div class="card-body">
           <h4 class="text-center">Edit Alert</h4>
           <p>This page displays the data for the alert you are editing. Alert start and end points must be re-entered to ensure alert accuracy.</p>
@@ -79,16 +79,14 @@
 
               </div>
             </div>
-          <div class="card-footer">
-            <div class="row">
+            <div class="row mt-2">
               <div class="col">
-                <a href="/alerts" class="btn btn-warning">Cancel</a>
+                <a href="/alerts" class="btn btn-danger">Cancel</a>
               </div>
               <div class="col">
                 <button type="submit" class="btn btn-primary float-right">Update</button>
               </div>
             </div>
-        </div>
           </div>
           </form>
         </div>
