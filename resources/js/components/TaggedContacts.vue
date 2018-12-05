@@ -38,31 +38,18 @@
                 }
               }
 
-            //console.log(this.tagged);
+
           }
         }
 
-          //console.log(this.contacts);
-          console.log(this.tags);
-        },
+      },
 
         methods: {
 
             tag: function(contact) {
 
-              console.log(contact)
-              console.log(this.taggedDisplayText);
-
-
               this.tagged.push(this.taggedDisplayText);
               this.taggedDisplayText = undefined;
-              /*if(this.tagged.includes(contact)) {
-                  console.log('Already in there');
-                  alert('This is working.');
-             }
-              else {
-                console.log('Going to push this contact to the array!');
-              } */
             },
 
             remove: function(tags) {
@@ -75,15 +62,8 @@
 
             }
 
-
-            }
-
-
-
+          }
 
         };
-
-
-
 
 </script>

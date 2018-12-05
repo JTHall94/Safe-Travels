@@ -130,19 +130,15 @@
               <g-map-display :alert='{!! $alert->toJson() !!}'></g-map-display>
             </div>
           </div>
-
-              <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary float-right mt-2">Edit</a>
-                <form action="/alerts/{{ $alert->id }}" method="POST">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger mt-2" type="submit">Resolve</i></button>
+            <a href="alerts/{{ $alert->id }}/edit" class="btn btn-primary float-right mt-2">Edit</a>
+            <form action="/alerts/{{ $alert->id }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger mt-2" type="submit">Resolve</i></button>
+        </div>
       </div>
     </div>
-  </div>
     @endforeach
-
-
   </div>
 </div>
-
 @endsection

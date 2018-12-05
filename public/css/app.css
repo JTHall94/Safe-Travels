@@ -10472,6 +10472,16 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.navbar-brand {
+  color: #EEF4F2 !important;
+  font-family: 'Lora';
+}
+
+#navbarDropdown {
+  color: #EEF4F2 !important;
+  font-family: 'Lora';
+}
+
 #welcomebod {
   background-color: #E8E8E8;
   background: url("/images/Splash.jpg") no-repeat;
@@ -10490,6 +10500,7 @@ a.text-dark:focus {
 .card-header,
 .card-footer {
   background-color: #5F8E5F;
+  color: #EEF4F2;
 }
 
 .card-body {

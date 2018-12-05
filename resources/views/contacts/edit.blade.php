@@ -2,9 +2,6 @@
 
 @section('card-content')
 
-
-
-
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card mt-4">
@@ -52,8 +49,4 @@
       </div>
     </div>
   </div>
-
 @endsection
-
-
-<!-- <input oninput="check_checkbox('bookmark_check_new', 'new_bookmark_url')"  name="new_bookmark_url" id="new_bookmark_url" class="mt-2 form-control" type="text" placeholder="New URL...">

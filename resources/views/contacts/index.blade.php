@@ -48,6 +48,7 @@
         </div>
       </div>
       <div class="card mt-5">
+        <div class="table-responsive">
           <table class="table">
               <thead>
                 <tr>
@@ -79,8 +80,7 @@
               </tbody>
           </table>
         </div>
+      </div>
     </div>
   </div>
-
-<template></template>
 @endsection

@@ -20,7 +20,6 @@
          @endif
         </div>
       </div>
-
       <div class="card mt-5">
         <div class="card-header text-center">Alert</div>
         <div class="card-body">
@@ -76,7 +75,6 @@
             <div class="row">
               <div class="col">
                 <g-map-edit :alert='{!! $a->toJson() !!}'></g-map-edit>
-
               </div>
             </div>
             <div class="row mt-2">
@@ -94,5 +92,4 @@
       </div>
     </div>
   </div>
-
 @endsection

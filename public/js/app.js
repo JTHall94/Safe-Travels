@@ -47553,13 +47553,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.tagged.push(this.contacts[j]);
           }
         }
-
-        //console.log(this.tagged);
       }
     }
-
-    //console.log(this.contacts);
-    console.log(this.tags);
   },
 
 
@@ -47567,18 +47562,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     tag: function tag(contact) {
 
-      console.log(contact);
-      console.log(this.taggedDisplayText);
-
       this.tagged.push(this.taggedDisplayText);
       this.taggedDisplayText = undefined;
-      /*if(this.tagged.includes(contact)) {
-          console.log('Already in there');
-          alert('This is working.');
-      }
-      else {
-        console.log('Going to push this contact to the array!');
-      } */
     },
 
     remove: function remove(tags) {
@@ -59878,28 +59863,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -59910,27 +59873,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
   load: {
     key: 'AIzaSyChEtjZl8cEGdECNhMPPA31y41ciVPhQss',
     libraries: 'places'
-    //process.env.MIX_GOOGLE_API_KEY,
-    //libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
 
-    //// If you want to set the version, you can do so:
-    // v: '3.26',
   }
 
-  //// If you intend to programmatically custom event listener code
-  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-  //// you might need to turn this on.
-  // autobindAllEvents: false,
-
-  //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
-  //// Vue.component('GmapMarker', GmapMarker)
-  //// then disable the following:
-  // installComponents: true,
 });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -59962,8 +59907,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
       this.alertlat = this.place.geometry.location.lat();
       this.alertlng = this.place.geometry.location.lng();
       this.mapzoom = 10;
-      //console.log(place);
-      //console.log(this.place.geometry.location.lat());
     },
     usePlace: function usePlace(place) {
       console.log(place);
@@ -59978,7 +59921,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
           }
 
         });
-        //console.log(lat);
+
         this.place = null;
       }
     }
@@ -60151,35 +60094,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -60190,27 +60104,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
   load: {
     key: 'AIzaSyChEtjZl8cEGdECNhMPPA31y41ciVPhQss',
     libraries: 'places'
-    //process.env.MIX_GOOGLE_API_KEY,
-    //libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
 
-    //// If you want to set the version, you can do so:
-    // v: '3.26',
   }
-
-  //// If you intend to programmatically custom event listener code
-  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-  //// you might need to turn this on.
-  // autobindAllEvents: false,
-
-  //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
-  //// Vue.component('GmapMarker', GmapMarker)
-  //// then disable the following:
-  // installComponents: true,
 });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60245,8 +60140,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     },
     setPlace: function setPlace(place) {
       this.place = place;
-      console.log(this.alert.alertlng);
-      //console.log(this.place.geometry.location.lat());
     },
     usePlace: function usePlace(place) {
       if (this.place) {
@@ -60257,7 +60150,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
           }
 
         });
-        //console.log(lat);
         this.place = null;
       }
     }
@@ -60433,27 +60325,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -60464,27 +60335,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
   load: {
     key: 'AIzaSyChEtjZl8cEGdECNhMPPA31y41ciVPhQss',
     libraries: 'places'
-    //process.env.MIX_GOOGLE_API_KEY,
-    //libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
 
-    //// If you want to set the version, you can do so:
-    // v: '3.26',
   }
 
-  //// If you intend to programmatically custom event listener code
-  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-  //// you might need to turn this on.
-  // autobindAllEvents: false,
-
-  //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
-  //// Vue.component('GmapMarker', GmapMarker)
-  //// then disable the following:
-  // installComponents: true,
 });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60508,13 +60361,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
 
   mounted: function mounted() {
 
-    /*this.markers.push({
-      position: {
-        lat: parseFloat(this.alert.alertlat),
-        lng: parseFloat(this.alert.alertlng),
-      }
-    })*/
-
     this.alertlocation = this.alert.location;
   },
 
@@ -60525,7 +60371,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     setPlace: function setPlace(place) {
       this.place = place;
       this.alertlocation = this.place.formatted_address;
-      this.alertlat = this.place.geometry.location.lat(), this.alertlng = this.place.geometry.location.lng(), console.log(place);
+      this.alertlat = this.place.geometry.location.lat(), this.alertlng = this.place.geometry.location.lng();
     },
     usePlace: function usePlace(place) {
       if (this.place) {
